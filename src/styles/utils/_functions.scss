@@ -1,0 +1,66 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+
+/* TYPE CHECKS */
+@function is-number($value) {
+	@return meta.type-of($value) == 'number';
+}
+
+@function is-time($value) {
+	$units: ms, s;
+	@return is-number($value) and list.index($units, math.unit($value)) != null;
+}
+
+@function is-angle($value) {
+	$units: deg, rad, grad, turn;
+	@return is-number($value) and list.index($units, math.unit($value)) != null;
+}
+
+@function is-relative-length($value) {
+	$units: em, ex, ch, rem, vw, vh, vmin, vmax;
+	@return is-number($value) and list.index($units, math.unit($value)) != null;
+}
+
+@function is-absolute-length($value) {
+	$units: cm, mm, in, px, pt, pc;
+	@return is-number($value) and list.index($units, math.unit($value)) != null;
+}
+
+@function is-percentage($value) {
+	@return is-number($value) and math.unit($value) == '%';
+}
+
+@function is-length($value) {
+	@return is-relative-length($value) or is-absolute-length($value);
+}
+
+@function is-position($value) {
+	$positions: top, right, bottom, left, center;
+	@return is-length($value) or is-percentage($value) or list.index($positions, $value) != null;
+}
+
+@function is-color($value) {
+	@return meta.type-of($value) == 'color';
+}
+
+/* COLOR */
+@function color-shade($color, $shade) {
+	$amt: if(is-percentage($shade), $shade, map.get($color-shades, $shade));
+	@return color.scale($color, $lightness: $amt);
+}
+
+@function color-contrast($color) {
+	@return if(color.lightness($color) / 100% < 0.65, #fff, #000);
+}
+
+/* SIZE */
+@function size($level) {
+	@return if(
+		is-length($level) or $level == 0,
+		$level,
+		1rem * math.pow($scale-factor, if(is-length($level), $level, map.get($levels, $level)))
+	);
+}

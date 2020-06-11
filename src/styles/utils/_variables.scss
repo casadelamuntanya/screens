@@ -1,0 +1,64 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Oswald:500|Roboto:300,500&display=swap');
+
+/* SIZINGS */
+$scale-factor: 1.333 !default; // Perfect Fourth
+$levels: (xs: -2, s: -1, m: 1, l: 2, xl: 3, xxl: 4, xxxl: 5);
+
+$base-margin: 'xs' !default;
+$base-padding: 'xl' !default;
+
+/* COLORS */
+$color-shades: (
+	light: 5%,
+	lighter: 15%,
+	lightest: 30%,
+	dark: -5%,
+	darker: -15%,
+	darkest: -30%
+) !default;
+
+$color-dark: #2d2c2f !default;
+$color-light: #fff !default;
+$color-primary: #7cb46c !default;
+$color-alert: #c23b22 !default;
+
+/* GRID */
+$grid-columns: 12 !default;
+$grid-gap: 0 !default;
+
+/* BOX */
+$box-padding: $base-padding;
+
+/* BORDERS */
+$base-border-color: #efefef !default;
+$base-border-width: 1px !default;
+$base-border-radius: 0 !default;
+
+/* TEXT */
+$base-font-family: 'Roboto', sans-serif !default;
+$base-font-size: 16px !default;
+$base-font-color: $color-dark !default;
+$base-line-height: 1.2 !default;
+$base-font-weight: 300 !default;
+$base-font-weight--bold: 500 !default;
+
+$heading-font-family: 'Oswald', sans-serif !default;
+$heading-font-color: inherit !default;
+$heading-line-height: 1.5 !default;
+$heading-margin-bottom: 0.5em !default;
+$heading-weight: 500 !default;
+$heading-spacing: 0.1em !default;
+$heading-transform: uppercase;
+
+/* BUTTONS */
+$btn-bg-color: $color-dark !default;
+$btn-border-color: $color-dark !default;
+$btn-txt-color: $color-light !default;
+$btn-bg-color--reverse: $color-light !default;
+$btn-border-color--reverse: $color-light !default;
+$btn-txt-color--reverse: $color-dark !default;
+$btn-border-width: 1px !default;
+$btn-padding: 's' !default;
+$btn-radius: 0 !default;
+$btn-margin: 1px !default;

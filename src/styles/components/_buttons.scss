@@ -1,0 +1,114 @@
+/* MIXINS */
+@mixin btn-color ($background, $text: color-contrast($background), $border: $background) {
+	color: $text;
+	background: $background;
+	border-color: $border;
+
+	&:hover {
+		color: if($text != #fff, color-shade($text, darker), $text);
+		background: color-shade($background, dark);
+		border-color: color-shade($border, dark);
+	}
+
+	&:active { box-shadow: 0 0 0 2px rgba($border, 0.3); }
+}
+
+/* GENERIC BUTTON */
+.btn {
+	position: relative;
+	z-index: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: size($btn-margin);
+	padding: size($btn-padding);
+	font: inherit;
+	font-size: 1rem;
+	line-height: 1;
+	outline: 0;
+	text-decoration: none;
+	vertical-align: middle;
+	border: $btn-border-width solid $btn-border-color;
+	border-radius: $btn-radius;
+	cursor: pointer;
+	appearance: none;
+
+	@include btn-color($btn-bg-color, $btn-txt-color, $btn-border-color);
+
+	/* COMPONENTS */
+	& > .icon + span { margin-left: 0.5em; }
+
+	/* VARIATIONS */
+	&--reverse {
+		@include btn-color($btn-bg-color--reverse, $btn-txt-color--reverse, $btn-border-color--reverse);
+	}
+	&--primary { @include btn-color($color-primary); }
+	&--alert { @include btn-color($color-alert); }
+
+	&--flat {
+		@include btn-color(transparent, $btn-bg-color);
+		&:hover { box-shadow: none; }
+	}
+
+	&--block {
+		display: flex;
+		width: calc(100% - 2 * #{$btn-margin});
+	}
+
+	&--loading {
+		pointer-events: none;
+
+		&::before {
+			display: block;
+			box-sizing: border-box;
+			width: 1em;
+			height: 1em;
+			margin-right: 0.5em;
+			border-top: 1px solid currentColor;
+			border-right: 1px solid transparent;
+			border-radius: 50%;
+			animation: rotate 1s linear infinite;
+			content: '';
+		}
+	}
+
+	/* STATES */
+	&:hover { z-index: 1; }
+
+	&:disabled,
+	&--disabled {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+}
+
+/* BUTTON GROUP */
+.btn-group {
+	display: inline-flex;
+	margin: $btn-margin;
+	vertical-align: middle;
+
+	/* COMPONENTS */
+	.btn {
+		margin: 0;
+
+		&:not(:last-child) {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&:not(:first-child) {
+			margin-left: -$btn-border-width;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+	/* VARIATIONS */
+	&--block {
+		display: flex;
+		.btn { flex: 1; }
+	}
+
+	&--disabled .btn { @extend .btn--disabled; }
+}

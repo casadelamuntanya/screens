@@ -1,0 +1,14 @@
+@mixin border-left-radius($amt) {
+	border-top-left-radius: $amt;
+	border-bottom-left-radius: $amt;
+}
+
+@mixin border-right-radius($amt) {
+	border-top-right-radius: $amt;
+	border-bottom-right-radius: $amt;
+}
+
+@mixin text-columns($columns) {
+	column-count: $columns;
+	column-gap: spacing('xxl');
+}

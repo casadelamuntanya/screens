@@ -1,0 +1,43 @@
+:root {
+	color: $base-font-color;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+}
+
+#app {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+
+	& > header {
+		margin: size($base-padding);
+		margin-bottom: 0;
+
+		.logo {
+			margin-left: 0;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+	}
+
+	& > main {
+		flex: 1;
+		margin: size($base-padding);
+		overflow: auto;
+	}
+}
+
+.fullscreen {
+	background: $color-light;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: block;
+	padding: size($base-padding);
+	box-sizing: border-box;
+	overflow: auto;
+}

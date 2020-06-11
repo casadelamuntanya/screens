@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+@mixin logo-size($size) {
+	height: math.round(2 * size($size));
+	margin: size($size);
+}
+
+.logo {
+	color: $color-dark;
+	vertical-align: middle;
+	outline: none;
+
+	&--xs { @include logo-size('xs'); }
+	&--s { @include logo-size('s'); }
+	&--m { @include logo-size('m'); }
+	&--l { @include logo-size('l'); }
+	&--xl { @include logo-size('xl'); }
+	&--xxl { @include logo-size('xxl'); }
+	&--xxxl { @include logo-size('xxxl'); }
+}

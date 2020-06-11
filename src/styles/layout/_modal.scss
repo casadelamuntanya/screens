@@ -1,0 +1,31 @@
+.modal {
+	&__fade {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		display: flex;
+		background: rgba($color-dark, 0.9);
+		backdrop-filter: blur(5px);
+	}
+
+	&__window {
+		position: relative;
+		background: $color-light;
+		padding: size($base-padding);
+		margin: auto;
+		max-width: 70%;
+	}
+
+	&__close {
+		@extend .btn;
+
+		position: absolute !important;
+		top: 0;
+		right: 0;
+		transform: translate(50%, -50%);
+
+		&::before { content: '\2715'; }
+	}
+}

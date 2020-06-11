@@ -1,0 +1,23 @@
+.align-right {
+	text-align: right;
+	margin-left: auto !important;
+}
+
+.align-left {
+	text-align: left;
+	margin-right: auto !important;
+}
+
+.align-center {
+	text-align: center;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.align-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.no-overflow { overflow: visible !important; }

@@ -1,0 +1,14 @@
+.bar {
+	width: 100%;
+	text-align: center;
+	padding: size('m') 0;
+
+	a {
+		display: inline-block;
+		padding: size('m');
+		color: color-shade($color-light, darkest);
+
+		&:hover { color: color-shade($color-dark, lighter); }
+		&.active { color: $color-dark; }
+	}
+}
