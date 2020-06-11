@@ -18,5 +18,10 @@ export default new Router({
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
 		},
+		{
+			path: '*',
+			name: 'not-found',
+			component: () => import('./views/404.vue'),
+		},
 	],
 });

@@ -1,0 +1,10 @@
+.empty-state {
+	display: flex;
+	height: 100%;
+
+	&__wrapper {
+		margin: auto;
+
+		img { margin: size('xxl'); }
+	}
+}
