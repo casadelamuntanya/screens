@@ -6,7 +6,7 @@
 					<img
 						svg-inline
 						src="@/assets/vectors/logos/cdm.svg"
-						class="logo logo--xxxl cdm-logo--animate" />
+						class="logo logo--xxxl logo--animate" />
 				</div>
 			</div>
 			<div class="row row--fit" :class="{ 'row--collapsed': isCollapsed }">
