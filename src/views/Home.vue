@@ -41,8 +41,14 @@ import { layout, sections } from '@/config/navigation';
 
 export default {
 	name: 'home',
+	props: {
+		activeNav: {
+			type: Boolean,
+			default: false,
+		},
+	},
 	data() {
-		return { layout, sections, isCollapsed: true };
+		return { layout, sections, isCollapsed: !this.activeNav };
 	},
 	computed: {
 		locales() {
