@@ -14,6 +14,12 @@ export default new Router({
 			component: Home,
 		},
 		{
+			path: '/navigation',
+			name: 'navigation',
+			component: Home,
+			props: { activeNav: true },
+		},
+		{
 			path: '/ui',
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
