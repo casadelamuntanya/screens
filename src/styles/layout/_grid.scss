@@ -31,7 +31,10 @@
 				&--off-#{$i} { margin-left: math.percentage(($i - 1) / $grid-columns); }
 			}
 
-			&--fit { flex: none; }
+			&--fit {
+				flex: none;
+				overflow: visible;
+			}
 			&--center { margin: 0 auto; }
 			&--left { margin-right: auto; }
 			&--right { margin-left: auto; }

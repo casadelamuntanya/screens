@@ -20,6 +20,11 @@ export default new Router({
 			props: { activeNav: true },
 		},
 		{
+			path: '/about',
+			name: 'about',
+			component: () => import('./views/About.vue'),
+		},
+		{
 			path: '/ui',
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
