@@ -24,3 +24,8 @@
 	from { stroke-dashoffset: 500%; }
 	to { stroke-dashoffset: 0; }
 }
+
+@keyframes explode {
+	0% { box-shadow: 0 0 0 0 rgba(#000, 1); }
+	50% { box-shadow: 0 0 0 size('s') rgba(#000, 0); }
+}
