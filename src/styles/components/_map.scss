@@ -1,0 +1,9 @@
+// Leaflet-compare Control
+.leaflet-compare-thumb {
+	background-color: #2d2c2f !important;
+
+	.leaflet-compare-div-end & {
+		font-size: 40px;
+		animation: explode 3s ease-out infinite;
+	}
+}

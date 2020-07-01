@@ -7,6 +7,7 @@ import i18n from './i18n';
 import 'reset-css';
 import './styles/main.scss';
 import 'remixicon/fonts/remixicon.css';
+import 'leaflet/dist/leaflet.css';
 
 Vue.config.productionTip = false;
 Vue.use(VueCommonFilters);

@@ -25,6 +25,11 @@ export default new Router({
 			component: () => import('./views/About.vue'),
 		},
 		{
+			path: '/explore',
+			name: 'explore',
+			component: () => import('./views/Explore.vue'),
+		},
+		{
 			path: '/ui',
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
