@@ -7,3 +7,13 @@
 		animation: explode 3s ease-out infinite;
 	}
 }
+
+/* Explore trails on leaflet */
+.leaflet-path {
+	stroke: $color-primary;
+	stroke-width: 4;
+	stroke-linecap: round; // butt, square, round
+	stroke-linejoin: round; // miter, round, bevel
+}
+
+@keyframes dash { to { stroke-dashoffset: 0; } }

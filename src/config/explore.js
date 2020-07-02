@@ -1,3 +1,13 @@
+/* Airtable query options */
+export const query = {
+	base: 'appMWr6cRQN40oIM2',
+	table: '/trails',
+	fields: ['name', 'duration', 'distance', 'drop_positive', 'drop_negative', 'seasonality', 'img', 'track', 'milestones', 'wildlife', 'flora', 'culture'],
+	localeFields: ['name'],
+};
+
+
+/* Leaflet map options */
 export const map = {
 	center: [42.556564, 1.533476], // Casa de la Muntanya
 	zoom: 17,
@@ -30,4 +40,12 @@ export const map = {
 			},
 		},
 	},
+};
+
+
+/* Path GeoJSON layer options */
+export const path = {
+	style: {},
+	fit: { padding: [10, 10] },
+	animation: { speed: 100 },
 };
