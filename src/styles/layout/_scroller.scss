@@ -1,0 +1,17 @@
+.scroller {
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	scroll-snap-type: x mandatory;
+	padding: size('l') 0;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar { display: none; }
+
+	& > * {
+		margin: 0 size('xxs');
+		white-space: normal;
+		vertical-align: middle;
+		scroll-snap-align: center;
+	}
+}

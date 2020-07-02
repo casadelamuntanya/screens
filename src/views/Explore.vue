@@ -1,5 +1,16 @@
 <template lang="html">
   <div class="grid">
+		<div class="row row--fit">
+			<div class="col">
+				<div class="scroller">
+					<trail-card
+						v-for="trail in trails"
+						:key="trail.name"
+						:trail="trail"
+						v-model="selectedTrail" />
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col">
 				<leaflet-map name="explore" :options="mapOptions">
@@ -18,6 +29,7 @@
 import axios from 'axios';
 import api from '@/apis/airtable.explore';
 import { LeafletMap, LeafletPath } from '@/components/leaflet/leaflet';
+import TrailCard from '@/components/TrailCard.vue';
 
 import {
 	map as mapOptions,
@@ -27,7 +39,7 @@ import {
 
 export default {
 	name: 'explore',
-	components: { LeafletMap, LeafletPath },
+	components: { LeafletMap, LeafletPath, TrailCard },
 	data() {
 		return {
 			mapOptions,

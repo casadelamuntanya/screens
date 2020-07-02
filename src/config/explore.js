@@ -49,3 +49,29 @@ export const path = {
 	fit: { padding: [10, 10] },
 	animation: { speed: 100 },
 };
+
+
+/* Trail card */
+export const card = {
+	insights: [
+		{
+			field: 'distance',
+			icon: 'ri-route-line',
+			format: meters => Math.round(meters / 100) / 10,
+		},
+		{
+			field: 'duration',
+			icon: 'ri-timer-line',
+			format(seconds) {
+				const hours = Math.floor(seconds / 3600);
+				const minutes = (seconds / 60) % 60;
+				return `${hours}${minutes ? `:${minutes}` : ''}`;
+			},
+		},
+		{
+			field: 'drop_positive',
+			icon: 'ri-arrow-up-line',
+			format: meters => meters,
+		},
+	],
+};

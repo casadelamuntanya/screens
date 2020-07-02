@@ -1,0 +1,50 @@
+.card {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+	height: 270px;
+	width: 190px;
+	border-radius: 3px;
+	overflow: hidden;
+	background: $color-dark;
+	box-sizing: border-box;
+	padding: size('m');
+	color: $color-light;
+	z-index: 0;
+	transition: all $base-interval ease-in-out;
+
+	&--inactive {
+		filter: grayscale(80%);
+		opacity: 0.7;
+		transform: scale(0.95);
+	}
+
+	&--active {
+		transform: scale(1.05);
+		z-index: 1;
+	}
+
+	.cover { opacity: 0.6; }
+
+	.insights {
+		display: flex;
+		justify-content: space-between;
+
+		.icon {
+			font-size: size('xs');
+			line-height: 1rem;
+			margin-left: 2px;
+		}
+		em { font-weight: bold; }
+		.unit { font-size: size('xs'); }
+	}
+
+	.thing {
+		background: #fff;
+		color: #000;
+		padding: 20px;
+		margin: 20px -19px -19px;
+		border-radius: 4px;
+	}
+}
