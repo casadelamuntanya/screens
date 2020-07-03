@@ -1,4 +1,5 @@
 <script>
+import { GeoJSON } from 'leaflet';
 import LeafletLayer from './LeafletLayer.vue';
 
 export default {
@@ -23,8 +24,17 @@ export default {
 			}, duration * 1000);
 		},
 	},
+	mounted() {
+		const coordinates = this.data.features.reduce((acc, feature) => {
+			const latLngs = GeoJSON.coordsToLatLngs(feature.geometry.coordinates);
+			acc.push(...latLngs);
+			return acc;
+		}, []);
+		this.map.fire('trail:add', { coordinates });
+	},
 	beforeDestroy() {
 		clearTimeout(this.animationTimeout);
+		this.map.fire('trail:remove');
 	},
 };
 </script>
