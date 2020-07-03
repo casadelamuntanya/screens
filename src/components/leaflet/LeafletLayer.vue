@@ -20,7 +20,7 @@ export default {
 	async mounted() {
 		const { name } = this.$options;
 		const { parent, map, data, options } = this;
-		const selector = Math.random().toString(36).substring(2);
+		const selector = data.name || Math.random().toString(36).substring(2);
 		const style = { ...options.style, className: `${name} ${selector}` };
 		this.layer = geoJSON(data, { style });
 		await parent.flyToBounds(this.layer.getBounds(), options.fit);
