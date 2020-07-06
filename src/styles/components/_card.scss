@@ -3,9 +3,9 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	position: relative;
-	height: 270px;
-	width: 190px;
-	border-radius: 3px;
+	height: size(9);
+	width: size(9);
+	border-radius: $base-border-radius;
 	overflow: hidden;
 	background: $color-dark;
 	box-sizing: border-box;

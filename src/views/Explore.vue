@@ -2,7 +2,7 @@
   <div class="grid">
 		<div class="row row--fit">
 			<div class="col">
-				<div class="scroller">
+				<div class="scroller trail-cards">
 					<trail-card
 						v-for="trail in trails"
 						:key="trail.name"
