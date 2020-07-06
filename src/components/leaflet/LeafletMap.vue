@@ -8,6 +8,7 @@
 <script>
 import { map, tileLayer, control } from 'leaflet';
 import './controls/control.leaflet-compare';
+import './controls/control.leaflet-elevation';
 import ResizeDirective from '@/utils/directive.resize';
 import { bindAllMapEvents } from './events.map';
 
@@ -46,11 +47,12 @@ export default {
 	},
 
 	methods: {
-		setControls({ attribution, zoom, scale, layers, compare }) {
+		setControls({ attribution, zoom, scale, layers, elevation, compare }) {
 			if (attribution) control.attribution(attribution).addTo(this.map);
 			if (zoom) control.zoom(zoom).addTo(this.map);
 			if (scale) control.scale(scale).addTo(this.map);
 			if (layers) control.layers(this.tiles, null, layers).addTo(this.map);
+			if (elevation) control.elevation(elevation).addTo(this.map);
 			if (compare) {
 				const { url, options, orientation, position } = compare;
 				const tiles = Object.values(this.tiles);

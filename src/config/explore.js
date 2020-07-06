@@ -39,6 +39,14 @@ export const map = {
 				accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
 			},
 		},
+		elevation: {
+			position: 'topright',
+			width: 500,
+			marker: {
+				centerOnHover: true,
+				persist: true,
+			},
+		},
 	},
 };
 

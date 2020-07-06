@@ -1,3 +1,4 @@
+/* LEAFLET CONTROLS */
 // Leaflet-compare Control
 .leaflet-compare-thumb {
 	background-color: #2d2c2f !important;
@@ -8,7 +9,86 @@
 	}
 }
 
-/* Explore trails on leaflet */
+// Leaflet zoom control (default override)
+.leaflet-control-zoom {
+	border-radius: $map-control-radius !important;
+	border: 1px solid #ccc !important;
+
+	&-out {
+		border-bottom-left-radius: $map-control-radius !important;
+		border-bottom-right-radius: $map-control-radius !important;
+	}
+
+	&-in {
+		border-top-left-radius: $map-control-radius !important;
+		border-top-right-radius: $map-control-radius !important;
+	}
+}
+
+// Leaflet Elevation control
+.leaflet-elevation {
+	background: rgba(#fff, 1);
+	border-radius: $map-control-radius;
+	border: 1px solid #ccc;
+
+	&__wrapper { padding: size('xs'); }
+
+	&__axis {
+		&--y {
+			text {
+				fill: color-shade($color-light, darker);
+				transform: translate(35px, -7px);
+			}
+
+			line {
+				stroke: color-shade($color-light, darker);
+				stroke-dasharray: 2;
+			}
+
+			.domain { display: none; }
+		}
+
+		&--x {
+			text { fill: color-shade($color-light, darkest); }
+			line { stroke: color-shade($color-light, darkest); }
+			.domain { display: none; }
+		}
+	}
+
+	&__line {
+		fill: none;
+		stroke: $color-primary;
+		stroke-width: 2;
+		stroke-linejoin: round;
+	}
+
+	&-marker {
+		&__point {
+			fill: #fff;
+			stroke: $color-primary;
+			stroke-width: 2;
+		}
+
+		&__label {
+			font-size: 1.2em;
+			fill: $color-primary;
+			text-anchor: middle;
+			alignment-baseline: middle;
+		}
+	}
+
+	&__map-marker {
+		display: block;
+		content: '';
+		background: $color-light;
+		border-radius: 50%;
+		border: 3px solid $color-primary;
+		box-sizing: border-box;
+	}
+}
+
+/* LEAFLET COMPONENTS */
+// Explore trails on leaflet
 .leaflet-path {
 	stroke: $color-primary;
 	stroke-width: 4;
