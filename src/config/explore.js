@@ -2,10 +2,13 @@
 export const query = {
 	base: 'appMWr6cRQN40oIM2',
 	table: '/trails',
-	fields: ['name', 'duration', 'distance', 'drop_positive', 'drop_negative', 'seasonality', 'img', 'track', 'milestones', 'wildlife', 'flora', 'culture'],
+	fields: ['name', 'duration', 'distance', 'drop_positive', 'drop_negative', 'seasonality', 'do_it_now', 'profile', 'img', 'track', 'milestones', 'wildlife', 'flora', 'culture'],
 	localeFields: ['name'],
 };
 
+export const filters = {
+	profiles: ['CASUAL', 'TREKKER', 'FAMILY', 'IGER', 'RUNNER'],
+};
 
 /* Leaflet map options */
 export const map = {

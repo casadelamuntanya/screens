@@ -1,6 +1,9 @@
 <template lang="html">
 	<div :class="`card ${statusClass}`" @click="toggle">
 		<img :src="trail.img[0].url" class="cover" />
+		<em v-if="isFeatured" class="badge badge--alert">
+			{{ $t('explore.card.do_it_now') }}
+		</em>
 		<h5 class="title">{{ trail.name }}</h5>
 		<ul class="insights">
 			<li v-for="insight in card.insights" :key="insight.field">
@@ -27,6 +30,10 @@ export default {
 	computed: {
 		isActive() {
 			return this.value === this.trail;
+		},
+		isFeatured() {
+			const month = new Date().toLocaleString('en', { month: 'short' }).toUpperCase();
+			return this.trail.do_it_now?.includes(month);
 		},
 		statusClass() {
 			return this.value

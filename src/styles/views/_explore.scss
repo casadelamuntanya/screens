@@ -5,3 +5,50 @@
 		width: 190px;
 	}
 }
+
+.filters {
+	&__select {
+		text-align: right;
+
+		h6 {
+			color: color-shade($color-light, darkest);
+			margin: 0 size('m') size('s');
+			display: inline-block;
+		}
+
+		input {
+			display: none;
+			&:checked + h6 { color: $color-dark; }
+		}
+	}
+
+	&__profiles {
+		text-align: center;
+		padding: size('xl') 0 size('s');
+
+		li {
+			vertical-align: top;
+			display: inline-block;
+			margin: 0 size('s');
+			font-size: size('s');
+			color: color-shade($color-light, darkest);
+
+			img {
+				display: block;
+				width: size('xxxl');
+				margin: 0 auto size('xxs');
+				border-radius: 10%;
+				filter: grayscale(100%) opacity(0.8);
+			}
+
+			input {
+				display: none;
+
+				&:checked + span {
+					color: $color-primary;
+					img { filter: grayscale(0) opacity(1); }
+				}
+			}
+		}
+	}
+}

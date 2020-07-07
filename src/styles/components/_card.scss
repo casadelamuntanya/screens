@@ -47,4 +47,17 @@
 		margin: 20px -19px -19px;
 		border-radius: 4px;
 	}
+
+	.badge {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: size('xs');
+		padding: size('s');
+		border-radius: $base-border-radius;
+		background: $color-dark;
+
+		&--alert { background: $color-alert; }
+	}
 }
