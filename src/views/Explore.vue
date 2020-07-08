@@ -9,6 +9,9 @@
 						:key="trail.name"
 						:trail="trail"
 						v-model="selectedTrail" />
+					<div v-if="!filteredTrails.length" class="scroller__empty">
+						{{ $t('explore.empty_trail_search') }}
+					</div>
 				</div>
 			</div>
 		</div>

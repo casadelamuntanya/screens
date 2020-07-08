@@ -13,4 +13,13 @@
 		vertical-align: middle;
 		scroll-snap-align: center;
 	}
+
+	&__empty {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: color-shade($color-light, darkest);
+		background: color-shade($color-light, dark);
+		min-height: 100px;
+	}
 }

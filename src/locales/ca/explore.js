@@ -51,5 +51,6 @@ export default {
 	},
 
 	do_it_now: 'Fes-lo ara!',
+	empty_trail_search: 'No hi ha resultats a mostrar',
 	disclaimer: "No es garanteix l'avistament de cap espècie.",
 };
