@@ -3,10 +3,11 @@
 
 /* SIZINGS */
 $scale-factor: 1.333 !default; // Perfect Fourth
-$levels: (xs: -2, s: -1, m: 1, l: 2, xl: 3, xxl: 4, xxxl: 5);
+$levels: (xxxs: -4, xxs: -3, xs: -2, s: -1, m: 1, l: 2, xl: 3, xxl: 4, xxxl: 5);
 
 $base-margin: 'xs' !default;
 $base-padding: 'xl' !default;
+$base-interval: 0.3s !default;
 
 /* COLORS */
 $color-shades: (
@@ -63,5 +64,8 @@ $btn-padding: 's' !default;
 $btn-radius: 0 !default;
 $btn-margin: 1px !default;
 
+/* MAP */
+$map-control-radius: $base-border-radius !default;
+
 /* INTERVALS */
-$logo-interval: 0.3s !default;
+$logo-interval: $base-interval !default;

@@ -15,12 +15,18 @@
 	'layout/box',
 	'layout/modal',
 	'layout/navigation',
+	'layout/scroller',
 	'layout/helpers';
 
 @import
 	'components/buttons',
 	'components/logo',
-	'components/empty-state';
+	'components/empty-state',
+	'components/card',
+	'components/badge',
+	'components/map',
+	'components/forms';
 
 @import
-	'views/about';
+	'views/about',
+	'views/explore';

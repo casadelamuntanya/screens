@@ -1,0 +1,32 @@
+.picker {
+	margin: size('m') 0;
+
+	&__title { @extend h6; }
+
+	input { display: none; }
+
+	&__label {
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+		margin: size('xs') 0;
+		box-sizing: border-box;
+		text-transform: capitalize;
+		line-height: 1.2;
+
+		&::before {
+			content: '';
+			height: 1rem;
+			width: 1rem;
+			border-radius: 3px;
+			border: 2px solid color-shade($color-light, darker);
+			margin: 0 size('xxs');
+			box-sizing: border-box;
+
+			:checked + & {
+				background: $color-light;
+				border: 5px solid $color-primary;
+			}
+		}
+	}
+}

@@ -61,6 +61,6 @@
 	@return if(
 		is-length($level) or $level == 0,
 		$level,
-		1rem * math.pow($scale-factor, if(is-length($level), $level, map.get($levels, $level)))
+		1rem * math.pow($scale-factor, if(is-number($level), $level, map.get($levels, $level)))
 	);
 }
