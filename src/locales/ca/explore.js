@@ -39,6 +39,7 @@ export default {
 		all: 'Tot',
 		featured: 'Destacat',
 		customized: 'Personalitzat',
+		clear: 'Esborrar filtres',
 	},
 
 	profiles: {

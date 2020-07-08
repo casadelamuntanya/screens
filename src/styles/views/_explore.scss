@@ -10,15 +10,15 @@
 	&__select {
 		text-align: right;
 
-		h6 {
+		h5 {
 			color: color-shade($color-light, darkest);
-			margin: 0 size('m') size('s');
+			margin: 0 size('m');
 			display: inline-block;
 		}
 
 		input {
 			display: none;
-			&:checked + h6 { color: $color-dark; }
+			&:checked + h5 { color: $color-dark; }
 		}
 	}
 

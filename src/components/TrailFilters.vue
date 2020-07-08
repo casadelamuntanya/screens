@@ -3,11 +3,13 @@
 		<div class="filters__select">
 			<label v-for="(f, name) in basicFilters" :key="name">
 				<input type="radio" v-model="filter" :value="name">
-				<h6>{{ $t(`explore.filters.${name}`) }}</h6>
+				<h5>{{ $t(`explore.filters.${name}`) }}</h5>
 			</label>
 			<label>
 				<input type="checkbox" v-model="showAdvanced" />
-				<h6><i class="icon ri-equalizer-line" /></h6>
+				<h5 :data-badge="countAdvanced">
+					<i class="icon ri-equalizer-line" />
+				</h5>
 			</label>
 		</div>
 		<ul v-if="filter === 'customized'" class="filters__profiles scroller">
@@ -26,12 +28,25 @@
 				<div class="row">
 					<section class="col col--6">
 						<div class="box">
-							<range-slider
-								v-for="range in ranges"
-								:key="range.attr"
-								:range="range"
-								namespace="explore.trails"
-								unlimited />
+							<div class="grid">
+								<div class="row">
+									<div class="col">
+										<range-slider
+											v-for="range in ranges"
+											:key="range.attr"
+											:range="range"
+											namespace="explore.trails"
+											unlimited />
+									</div>
+								</div>
+								<div v-if="countAdvanced" class="row row--fit">
+									<div class="col">
+										<button class="btn" @click="clearAdvanced">
+											{{ $t('explore.filters.clear') }}
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</section>
 					<section class="col">
@@ -69,10 +84,10 @@ export default {
 	data() {
 		return {
 			profiles,
-			ranges: ranges.map(range => ({ ...range, values: range.limits })),
-			pickers: pickers.map(picker => ({ ...picker, values: [] })),
+			ranges: [],
+			pickers: [],
 			profile: undefined,
-			filter: 'all',
+			filter: undefined,
 			showAdvanced: false,
 		};
 	},
@@ -101,11 +116,29 @@ export default {
 			const basicFilter = this.basicFilters[this.filter] || this.basicFilters.all;
 			return trail => basicFilter(trail) && this.advancedFilters(trail);
 		},
+		countAdvanced() {
+			const countPickers = this.pickers.reduce((acc, { values }) => acc + !!values.length, 0);
+			const countRanges = this.ranges.reduce((acc, { values, limits }) => {
+				const changed = values[0] !== limits[0] || values[1] !== limits[1];
+				return acc + changed;
+			}, 0);
+			return (countPickers + countRanges) || null;
+		},
 	},
 	watch: {
 		filters(filters) {
 			this.$emit('input', filters);
 		},
+	},
+	methods: {
+		clearAdvanced() {
+			this.ranges = ranges.map(range => ({ ...range, values: range.limits }));
+			this.pickers = pickers.map(picker => ({ ...picker, values: [] }));
+		},
+	},
+	mounted() {
+		this.clearAdvanced();
+		this.filter = 'all';
 	},
 };
 </script>
