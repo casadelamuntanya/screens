@@ -1,0 +1,44 @@
+@import '~vue-range-component/dist/vue-range-slider';
+
+// Override vue-range-slider component
+$slider-bar-height: 3px;
+$slider-dot-size: 30px;
+$slider-dot-shadow: 5px;
+$slider-margin: $slider-dot-size / 2 + $slider-dot-shadow;
+
+.slider {
+	width: calc(100% - #{$slider-dot-size / 2} - #{$slider-dot-shadow * 2}) !important;
+	height: $slider-bar-height !important;
+	margin: $slider-dot-size / 3 $slider-dot-shadow;
+
+	&-dot {
+		box-sizing: border-box;
+		border: $slider-bar-height solid $color-primary;
+		box-shadow: none !important;
+		top: 0 !important;
+		height: $slider-dot-size !important;
+		width: $slider-dot-size !important;
+		margin-top: -$slider-dot-size / 2 + $slider-bar-height / 2;
+
+		&-dragging { box-shadow: 0 0 0 $slider-dot-shadow rgba($color-primary, 0.5) !important; }
+	}
+
+	&-piecewise { background: color-shade($color-light, darker) !important; }
+	&-process { background: $color-primary !important; }
+	&-tooltip { display: none !important; }
+}
+
+// Custom range slider component
+.range-slider {
+	margin: size('m') 0;
+
+	&__legend { display: flex; }
+
+	&__title {
+		@extend h6;
+
+		flex: 1;
+	}
+
+	&__output { opacity: 0.5; }
+}

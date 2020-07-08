@@ -8,6 +8,19 @@ export const query = {
 
 export const filters = {
 	profiles: ['CASUAL', 'TREKKER', 'FAMILY', 'IGER', 'RUNNER'],
+	ranges: [
+		{ attr: 'distance', limits: [0, 30000], step: 1000, unit: { from: 'm', to: 'km' } },
+		{ attr: 'duration', limits: [0, 36000], step: 3600, unit: { from: 's', to: 'h' } },
+		{ attr: 'drop_positive', limits: [0, 2000], step: 100, unit: { from: 'm', to: 'm' } },
+	],
+	pickers: [
+		{ attr: 'culture', options: ['ROMANESQUE', 'DRY_STONE', 'ART'] },
+		{
+			attr: 'wildlife',
+			options: ['RUPICABRA', 'CAPREOLUS', 'OVIS_MUSIMON', 'MARMOTA', 'LUTRINAE', 'SALMO_TRUTTA', 'TRITURUS', 'LACERTA', 'TETRAO', 'LAGOPUS', 'ATHENE_NOCTUA'],
+		},
+		{ attr: 'flora', options: ['NARCISSUS_POETICUS', 'SINGULAR_TREE'] },
+	],
 };
 
 /* Leaflet map options */
