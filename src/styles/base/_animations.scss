@@ -25,6 +25,13 @@
 	to { stroke-dashoffset: 0; }
 }
 
+@keyframes bounce {
+	0% { transform: scale(0.5); }
+	50% { transform: scale(1.05); }
+	70% { transform: scale(0.9); }
+	100% { transform: scale(1); }
+}
+
 @keyframes explode {
 	0% { box-shadow: 0 0 0 0 rgba(#000, 1); }
 	50% { box-shadow: 0 0 0 size('s') rgba(#000, 0); }

@@ -13,7 +13,6 @@
 	'layout/grid',
 	'layout/bar',
 	'layout/box',
-	'layout/modal',
 	'layout/navigation',
 	'layout/scroller',
 	'layout/helpers';
@@ -21,7 +20,8 @@
 @import
 	'components/buttons',
 	'components/logo',
-	'components/empty-state',
+	'components/modal',
+	'components/carousel',
 	'components/card',
 	'components/badge',
 	'components/map',

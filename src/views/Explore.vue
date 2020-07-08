@@ -1,31 +1,23 @@
 <template lang="html">
-  <div class="grid">
-		<trail-filters v-model="filterTrail" />
-		<div class="row row--fit">
-			<div class="col">
-				<div class="scroller trail-cards">
-					<trail-card
-						v-for="trail in filteredTrails"
-						:key="trail.name"
-						:trail="trail"
-						v-model="selectedTrail" />
-					<div v-if="!filteredTrails.length" class="scroller__empty">
-						{{ $t('explore.empty_trail_search') }}
-					</div>
-				</div>
+  <div class="stack">
+		<trail-filters v-model="filterTrail">
+			<div
+				class="scroller trail-cards"
+				:data-empty="$t('explore.empty_trail_search')">
+				<trail-card
+					v-for="trail in filteredTrails"
+					:key="trail.name"
+					:trail="trail"
+					v-model="selectedTrail" />
 			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<leaflet-map name="explore" :options="mapOptions">
-					<leaflet-path
-						v-if="track"
-						:key="track.name"
-						:data="track"
-						:options="pathOptions" />
-				</leaflet-map>
-			</div>
-		</div>
+		</trail-filters>
+		<leaflet-map name="explore" class="fill" :options="mapOptions">
+			<leaflet-path
+				v-if="track"
+				:key="track.name"
+				:data="track"
+				:options="pathOptions" />
+		</leaflet-map>
 	</div>
 </template>
 

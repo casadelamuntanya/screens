@@ -10,6 +10,8 @@
 	vertical-align: middle;
 	outline: none;
 
+	&--reverse { color: $color-light; }
+
 	&--xs { @include logo-size('xs'); }
 	&--s { @include logo-size('s'); }
 	&--m { @include logo-size('m'); }

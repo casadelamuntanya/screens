@@ -6,7 +6,7 @@ svg {
 }
 
 .cover {
-	position: absolute;
+	position: absolute !important;
 	top: 0;
 	left: 0;
 	height: 100%;
@@ -19,6 +19,24 @@ svg {
 	& ~ * {
 		position: relative;
 		z-index: 1;
+	}
+}
+
+figure {
+	position: relative;
+
+	&.cover {
+		display: flex;
+
+		img { @extend .cover; }
+
+		figcaption {
+			margin-top: auto;
+			background: rgba(#000, 0.5);
+			color: #fff;
+			font-size: size('xxs');
+			padding: size('xxs');
+		}
 	}
 }
 

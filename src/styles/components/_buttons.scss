@@ -57,6 +57,7 @@
 
 	&--loading {
 		pointer-events: none;
+		opacity: 0.75;
 
 		&::before {
 			display: block;
@@ -64,8 +65,8 @@
 			width: 1em;
 			height: 1em;
 			margin-right: 0.5em;
-			border-top: 1px solid currentColor;
-			border-right: 1px solid transparent;
+			border: 2px solid transparent;
+			border-top: 2px solid currentColor;
 			border-radius: 50%;
 			animation: rotate 1s linear infinite;
 			content: '';
@@ -77,7 +78,7 @@
 
 	&:disabled,
 	&--disabled {
-		opacity: 0.3;
+		opacity: 0.2;
 		pointer-events: none;
 	}
 }

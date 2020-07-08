@@ -1,0 +1,13 @@
+.carousel {
+	&__controls {
+		button {
+			@extend .btn;
+			@extend .btn--reverse;
+
+			font-size: size('m');
+			padding-left: size('m');
+			padding-right: size('m');
+			margin: 0;
+		}
+	}
+}

@@ -14,17 +14,6 @@
 	z-index: 0;
 	transition: all $base-interval ease-in-out;
 
-	&--inactive {
-		filter: grayscale(80%);
-		opacity: 0.7;
-		transform: scale(0.95);
-	}
-
-	&--active {
-		transform: scale(1.05);
-		z-index: 1;
-	}
-
 	.cover { opacity: 0.6; }
 
 	.insights {

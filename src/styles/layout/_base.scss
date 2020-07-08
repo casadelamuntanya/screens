@@ -5,6 +5,11 @@
 	font-weight: $base-font-weight;
 }
 
+* { // Hide all scrollbars
+	scrollbar-width: none;
+	&::-webkit-scrollbar { display: none; }
+}
+
 #app {
 	height: 100vh;
 	width: 100vw;
@@ -13,7 +18,6 @@
 
 	& > header {
 		margin: size($base-padding);
-		margin-bottom: 0;
 
 		.logo {
 			margin-left: 0;
@@ -24,11 +28,12 @@
 
 	& > main {
 		flex: 1;
-		margin: size($base-padding);
-		// overflow: auto;
+		overflow: auto;
+		padding: 0 size($base-padding) size($base-padding);
 	}
 }
 
+/* FULLSCREEN PAGE */
 .fullscreen {
 	background: $color-light;
 	position: fixed;
@@ -40,4 +45,26 @@
 	padding: size($base-padding);
 	box-sizing: border-box;
 	overflow: auto;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	& > div,
+	& > article,
+	& > section {
+		margin: size($hero-spacing);
+	}
+}
+
+/* SPACER */
+hr {
+	display: inline-block;
+	height: size($base-padding);
+	width: size($base-padding);
+	margin: 0;
+	border: 0;
 }

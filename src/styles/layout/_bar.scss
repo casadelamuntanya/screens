@@ -1,14 +1,26 @@
 .bar {
-	width: 100%;
 	text-align: center;
-	padding: size('m') 0;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	padding: size($bar-spacing) 0;
+	border-top: 1px solid color-shade($color-light, dark);
+	border-bottom: 1px solid color-shade($color-light, dark);
 
-	a {
-		display: inline-block;
-		padding: size('m');
-		color: color-shade($color-light, darkest);
+	& + & { border-top: none; }
 
-		&:hover { color: color-shade($color-dark, lighter); }
-		&.active { color: $color-dark; }
+	& > * { margin: 0 size($bar-spacing) / 2 !important; }
+
+	/* BAR ACCEPTS UNFOLDABLE PANEL  */
+	&--unfold {
+		flex-wrap: wrap;
+
+		.panel {
+			width: 100%;
+			margin: 0 !important;
+			margin: size($bar-spacing) 0 0 !important;
+			text-align: left;
+		}
 	}
 }

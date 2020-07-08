@@ -1,67 +1,58 @@
 <template lang="html">
-	<div class="filters">
-		<div class="filters__select">
-			<label v-for="(f, name) in basicFilters" :key="name">
-				<input type="radio" v-model="filter" :value="name">
-				<h5>{{ $t(`explore.filters.${name}`) }}</h5>
-			</label>
-			<label>
-				<input type="checkbox" v-model="showAdvanced" />
-				<h5 :data-badge="countAdvanced">
-					<i class="icon ri-equalizer-line" />
-				</h5>
-			</label>
-		</div>
-		<ul v-if="filter === 'customized'" class="filters__profiles scroller">
-			<li v-for="p in profiles" :key="p">
-				<label>
-					<input type="radio" v-model="profile" :value="p">
-					<span>
-						<img :src="`/assets/images/profiles/${p}.jpg`" />
-						{{ $t(`explore.profiles.${p}`) }}
-					</span>
+	<div class="bar bar--unfold align-right">
+		<label v-for="(_, name) in basicFilters" :key="name">
+			<input type="radio" v-model="filter" :value="name" />
+			<h5>{{ $t(`explore.filters.${name}`) }}</h5>
+		</label>
+		<label>
+			<input type="checkbox" v-model="showAdvanced" />
+			<h5 :data-badge="countAdvanced"><i class="ri-equalizer-line icon" /></h5>
+		</label>
+		<div v-if="filter === 'customized'" class="panel">
+			<div class="profiles">
+				<label v-for="name in profiles" :key="name">
+					<input type="radio" v-model="profile" :value="name" />
+					<div>
+						<img :src="require(`@/assets/vectors/profiles/${name}.svg`)" />
+						<span>{{ $t(`explore.profiles.${name}`) | uppercase }}</span>
+					</div>
 				</label>
-			</li>
-		</ul>
-		<div v-if="showAdvanced" class="filters__advanced">
-			<div class="grid">
-				<div class="row">
-					<section class="col col--6">
-						<div class="box">
-							<div class="grid">
-								<div class="row">
-									<div class="col">
-										<range-slider
-											v-for="range in ranges"
-											:key="range.attr"
-											:range="range"
-											namespace="explore.trails"
-											unlimited />
-									</div>
-								</div>
-								<div v-if="countAdvanced" class="row row--fit">
-									<div class="col">
-										<button class="btn" @click="clearAdvanced">
-											{{ $t('explore.filters.clear') }}
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="col">
-						<div class="box">
-							<picker
-								v-for="picker in pickers"
-								:key="picker.attr"
-								:picker="picker"
-								:columns="3"
-								namespace="explore.trails" />
-							<p class="note text--s">{{ $t('explore.disclaimer') }}</p>
-						</div>
-					</section>
-				</div>
 			</div>
+		</div>
+		<div v-if="showAdvanced" class="panel">
+			<div class="cols">
+				<hr />
+				<div class="col col--5">
+					<range-slider
+						v-for="(range, i) in ranges"
+						:key="i"
+						:options="range"
+						v-model="range.values"
+						:title="$t(`explore.trails.attributes.${range.attr}`)"
+						unlimited />
+				</div>
+				<hr />
+				<div class="col col--auto">
+					<picker
+						v-for="(picker, i) in pickers"
+						:key="i"
+						:options="picker.options"
+						v-model="picker.values"
+						:title="$t(`explore.trails.attributes.${picker.attr}`)"
+						v-slot="{ option }">
+						{{ $t(`explore.trails.${picker.attr}.${option}`) | uppercase }}
+					</picker>
+				</div>
+				<hr />
+			</div>
+			<p v-if="countAdvanced" class="align-center">
+				<button class="btn" @click="clearAdvanced">
+					{{ $t('explore.filters.clear') }}
+				</button>
+			</p>
+		</div>
+		<div class="panel">
+			<slot />
 		</div>
 	</div>
 </template>

@@ -1,3 +1,16 @@
+/* BAR NAVIGATION */
+nav.bar a {
+	@extend h5;
+
+	color: color-shade($color-light, darkest);
+
+	&.active {
+		color: $color-dark;
+		transform: scale(1.1);
+	}
+}
+
+/* MAIN GRID NAVIGATION */
 .main-nav {
 	display: grid;
 	width: 100%;

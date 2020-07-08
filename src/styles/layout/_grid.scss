@@ -1,81 +1,32 @@
 @use 'sass:math';
 
-/* ROWS */
-.grid {
+/* GRID */
+.stack {
 	display: flex;
-	flex: 1;
 	flex-direction: column;
-	padding: size($grid-gap) / 2;
 	height: 100%;
-	box-sizing: border-box;
 
-	/* ROW */
-	.row {
+	.fill {
 		flex: 1;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		padding: size($grid-gap) / 2 0;
-		overflow: hidden;
+		overflow: auto;
+	}
+}
 
-		/* COLUMN */
-		.col {
-			flex: 1;
-			box-sizing: border-box;
-			padding: 0 size($grid-gap) / 2;
-			overflow: auto;
+.cols {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 
-			/* VARIATIONS */
-			@for $i from 1 through $grid-columns {
-				&--#{$i} { flex: 0 0 math.percentage($i / $grid-columns); }
-				&--off-#{$i} { margin-left: math.percentage(($i - 1) / $grid-columns); }
-			}
+	.col {
+		position: relative;
+		box-sizing: border-box;
+		max-height: 100%;
+		overflow: auto;
 
-			&--fit {
-				flex: none;
-				overflow: visible;
-			}
-			&--center { margin: 0 auto; }
-			&--left { margin-right: auto; }
-			&--right { margin-left: auto; }
-			&--top { align-self: flex-start; }
-			&--bottom { align-self: flex-end; }
-			&--middle { align-self: center; }
+		@for $i from 1 through 12 {
+			&--#{$i} { flex: 0 0 math.percentage($i / 12); }
 		}
 
-		&--fit { flex: none; }
-		&--collapsed { flex: 0; }
-	}
-
-	.row & { // Nested grid into row
-		padding: 0 size($grid-gap) / 2;
-		margin: size($grid-gap) / -2;
-		height: calc(100% + #{size($grid-gap)});
-	}
-
-	.col & { // Nested grid into column
-		padding: 0;
-		margin: size($grid-gap) / -2;
-		height: calc(100% + #{size($grid-gap)});
-	}
-
-	/* GAPLESS */
-	&--gapless {
-		padding: 0 !important;
-
-		.grid {
-			margin: 0 !important;
-			padding: 0 !important;
-			height: 100% !important;
-		}
-
-		.row,
-		.col {
-			margin: 0 !important;
-			padding: 0 !important;
-		}
-
-		.row & { padding: size($grid-gap) / 2 size($grid-gap) !important; }
-		.col & { padding: size($grid-gap) / 2 !important; }
+		&--auto { flex: 1; }
 	}
 }

@@ -1,7 +1,7 @@
 p {
 	line-height: $base-line-height;
 
-	& + & { margin-top: size($base-margin); }
+	& + & { margin-top: size($base-text-spacing); }
 
 	&.note { opacity: 0.4; }
 }

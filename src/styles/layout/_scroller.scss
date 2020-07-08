@@ -1,25 +1,29 @@
 .scroller {
 	overflow-x: auto;
-	overflow-y: hidden;
 	white-space: nowrap;
 	scroll-snap-type: x mandatory;
-	padding: size('l') 0;
-	scrollbar-width: none;
 
+	// Hide scrollbar
+	scrollbar-width: none;
 	&::-webkit-scrollbar { display: none; }
 
 	& > * {
+		display: inline-block;
 		white-space: normal;
 		vertical-align: middle;
 		scroll-snap-align: center;
 	}
 
-	&__empty {
+	&:empty {
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: color-shade($color-light, darkest);
-		background: color-shade($color-light, dark);
+		color: color-shade($color-light, darker);
 		min-height: 100px;
+
+		&::before {
+			content: attr(data-empty);
+			display: block;
+			width: auto;
+			margin: auto;
+		}
 	}
 }

@@ -17,7 +17,7 @@ export default new Router({
 			path: '/navigation',
 			name: 'navigation',
 			component: Home,
-			props: { activeNav: true },
+			props: { activeNavigation: true },
 		},
 		{
 			path: '/about',

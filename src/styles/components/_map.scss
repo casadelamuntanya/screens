@@ -14,15 +14,8 @@
 	border-radius: $map-control-radius !important;
 	border: 1px solid #ccc !important;
 
-	&-out {
-		border-bottom-left-radius: $map-control-radius !important;
-		border-bottom-right-radius: $map-control-radius !important;
-	}
-
-	&-in {
-		border-top-left-radius: $map-control-radius !important;
-		border-top-right-radius: $map-control-radius !important;
-	}
+	&-out { @include border-bottom-radius($map-control-radius); }
+	&-in { @include border-top-radius($map-control-radius); }
 }
 
 // Leaflet Elevation control

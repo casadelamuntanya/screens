@@ -1,16 +1,14 @@
 <template>
 	<div class="fullscreen">
-		<div class="grid">
-			<div @click="toggleNav" class="row">
-				<div class="col col--fit col--center col--middle">
-					<img
-						svg-inline
-						src="@/assets/vectors/logos/cdm.svg"
-						class="logo logo--xxxl logo--animate" />
-				</div>
+		<div class="stack">
+			<div @click="toggleNavigation" class="fill hero">
+				<img
+					svg-inline
+					src="@/assets/vectors/logos/cdm.svg"
+					class="logo logo--xxxl logo--animate" />
 			</div>
-			<div class="row row--fit" :class="{ 'row--collapsed': isCollapsed }">
-				<div class="bar">
+			<div v-if="isNavigation">
+				<nav class="bar">
 					<a
 						href="#"
 						v-for="locale in locales"
@@ -19,7 +17,7 @@
 						@click.prevent="changeLocale(locale.code)">
 						{{ locale.name | uppercase }}
 					</a>
-				</div>
+				</nav>
 				<div class="main-nav" :style="`grid-template: ${layout};`">
 					<router-link
 						v-for="section in sections"
@@ -42,13 +40,13 @@ import { layout, sections } from '@/config/navigation';
 export default {
 	name: 'home',
 	props: {
-		activeNav: {
+		activeNavigation: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	data() {
-		return { layout, sections, isCollapsed: !this.activeNav };
+		return { layout, sections, isNavigation: this.activeNavigation };
 	},
 	computed: {
 		locales() {
@@ -63,7 +61,7 @@ export default {
 		},
 	},
 	methods: {
-		toggleNav() { this.isCollapsed = !this.isCollapsed; },
+		toggleNavigation() { this.isNavigation = !this.isNavigation; },
 		changeLocale(code) { this.$i18n.locale = code; },
 		isCurrentLocale(locale) { return locale === this.$i18n.locale; },
 	},

@@ -1,21 +1,22 @@
-@mixin box-paint($color) {
-	background: $color;
-	color: color-contrast($color);
-}
-
 .box {
 	background: $color-light;
-	height: 100%;
+	color: $color-dark;
 	padding: size($box-padding);
 	box-sizing: border-box;
+	border-radius: $base-border-radius;
+	overflow: auto;
+	position: relative;
 
-	&--midtone1 { @include box-paint(color-shade($color-light, dark)); }
-	&--midtone2 { @include box-paint(color-shade($color-light, darker)); }
-	&--midtone3 { @include box-paint(color-shade($color-light, darkest)); }
-	&--midtone4 { @include box-paint(color-shade($color-dark, lightest)); }
-	&--midtone5 { @include box-paint(color-shade($color-dark, lighter)); }
-	&--midtone6 { @include box-paint(color-shade($color-dark, light)); }
-	&--dark { @include box-paint($color-dark); }
-	&--primary { @include box-paint($color-primary); }
-	&--alert { @include box-paint($color-alert); }
+	&--midtone1 { @include paint(color-shade($color-light, dark)); }
+	&--midtone2 { @include paint(color-shade($color-light, darker)); }
+	&--midtone3 { @include paint(color-shade($color-light, darkest)); }
+	&--midtone4 { @include paint(color-shade($color-dark, lightest)); }
+	&--midtone5 { @include paint(color-shade($color-dark, lighter)); }
+	&--midtone6 { @include paint(color-shade($color-dark, light)); }
+	&--dark { @include paint($color-dark); }
+	&--primary { @include paint($color-primary); }
+	&--alert { @include paint($color-alert); }
+
+	.fill > &,
+	.col > & { height: 100%; }
 }

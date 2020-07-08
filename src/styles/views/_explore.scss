@@ -1,54 +1,40 @@
 .trail-cards {
 	.card {
-		margin: 0 5px;
+		margin: 0 4px;
 		height: 250px;
 		width: 190px;
 	}
+
+	&::before,
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 7px;
+	}
 }
 
-.filters {
-	&__select {
-		text-align: right;
+.profiles {
+	text-align: center;
 
-		h5 {
-			color: color-shade($color-light, darkest);
-			margin: 0 size('m');
-			display: inline-block;
-		}
-
-		input {
-			display: none;
-			&:checked + h5 { color: $color-dark; }
-		}
+	img {
+		height: 70px;
+		width: 70px;
+		margin: 10px auto;
+		display: block;
+		opacity: 0.5;
 	}
 
-	&__profiles {
-		text-align: center;
-		padding: size('xl') 0 size('s');
+	span {
+		display: inline-block;
+		padding: 5px 8px;
+		font-size: 10px;
+	}
 
-		li {
-			vertical-align: top;
-			display: inline-block;
-			margin: 0 size('s');
-			font-size: size('s');
-			color: color-shade($color-light, darkest);
-
-			img {
-				display: block;
-				width: size('xxxl');
-				margin: 0 auto size('xxs');
-				border-radius: 10%;
-				filter: grayscale(100%) opacity(0.8);
-			}
-
-			input {
-				display: none;
-
-				&:checked + span {
-					color: $color-primary;
-					img { filter: grayscale(0) opacity(1); }
-				}
-			}
+	input:checked + * > {
+		span {
+			background: #000;
+			color: #fff;
 		}
+		img { opacity: 1; }
 	}
 }
