@@ -81,11 +81,13 @@ export const card = {
 		{
 			field: 'distance',
 			icon: 'ri-route-line',
+			unit: 'km',
 			format: meters => Math.round(meters / 100) / 10,
 		},
 		{
 			field: 'duration',
 			icon: 'ri-timer-line',
+			unit: 'h',
 			format(seconds) {
 				const hours = Math.floor(seconds / 3600);
 				const minutes = (seconds / 60) % 60;
@@ -95,6 +97,7 @@ export const card = {
 		{
 			field: 'drop_positive',
 			icon: 'ri-arrow-up-line',
+			unit: 'm',
 			format: meters => meters,
 		},
 	],

@@ -35,22 +35,6 @@ export default {
 		},
 	},
 
-	card: {
-		do_it_now: 'Fes-lo ara!',
-		distance: {
-			name: '@:explore.trails.attributes.distance',
-			unit: 'kilòmetres',
-		},
-		duration: {
-			name: '@:explore.trails.attributes.duration',
-			unit: 'hores',
-		},
-		drop_positive: {
-			name: '@:explore.trails.attributes.drop_positive',
-			unit: 'metres',
-		},
-	},
-
 	filters: {
 		all: 'Tot',
 		featured: 'Destacat',
@@ -65,5 +49,6 @@ export default {
 		RUNNER: 'Corredor',
 	},
 
+	do_it_now: 'Fes-lo ara!',
 	disclaimer: "No es garanteix l'avistament de cap espècie.",
 };
