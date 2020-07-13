@@ -58,6 +58,12 @@ export default {
 			return data;
 		},
 	},
+	watch: {
+		filteredTrails(trails) {
+			const isSelectedVisible = trails.some(trail => trail === this.selectedTrail);
+			if (!isSelectedVisible) this.selectedTrail = undefined;
+		},
+	},
 	mounted() {
 		const params = { ...query, locale: this.$i18n.locale };
 		api.get(query.table, { params })

@@ -3,6 +3,20 @@
 		margin: 0 4px;
 		height: 250px;
 		width: 190px;
+
+		&--inactive {
+			filter: grayscale(100%);
+			opacity: 0.4;
+			transform: scale(0.9);
+		}
+
+		&--active {
+			position: sticky;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			box-shadow: 0 0 0 size('m') $color-light;
+		}
 	}
 
 	&::before,
