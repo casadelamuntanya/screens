@@ -45,4 +45,22 @@ figure {
 	font-size: 1em;
 	color: inherit;
 	vertical-align: bottom;
+.icons-box {
+	display: flex;
+
+	.icon { @extend .icon--xxl; }
+
+	.title {
+		@extend h5;
+
+		margin: size('m') 0;
+	}
+
+	aside {
+		@extend p;
+		@extend .note;
+		@extend .text--s;
+
+		margin: 0 size('s');
+	}
 }

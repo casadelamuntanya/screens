@@ -53,7 +53,7 @@
 }
 
 @function color-contrast($color) {
-	@return if(color.lightness($color) / 100% < 0.65, #fff, #000);
+	@return if(color.lightness($color) / 100% < 0.65, $color-light, $color-dark);
 }
 
 /* SIZE */

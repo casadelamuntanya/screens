@@ -13,9 +13,12 @@
 </template>
 
 <script>
+import { sections } from '@/config/safety';
+
 export default {
 	name: 'safety',
 	data() {
+		return { sections };
 	},
 };
 </script>

@@ -33,6 +33,10 @@ export default new Router({
 			path: '/safety',
 			name: 'safety',
 			component: () => import('./views/Safety.vue'),
+			children: [
+				{ path: '', component: () => import('./views/safety/SafetyBase.vue') },
+				{ path: 'base', component: () => import('./views/safety/SafetyBase.vue') },
+			],
 		},
 		{
 			path: '/ui',

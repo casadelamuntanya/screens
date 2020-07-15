@@ -5,10 +5,12 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	position: relative;
 
 	.fill {
 		flex: 1;
 		overflow: auto;
+		position: relative;
 	}
 }
 
