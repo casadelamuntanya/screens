@@ -14,6 +14,7 @@ export default {
 	},
 
 	position: {
+		position: 'posició de seguretat',
 		introduction: "La prioritat durant una tempesta elèctrica és trobar un refugi segur. Com a última alternativa, s'ha d'adoptar la posició de seguretat per reduir la probabilitat d'impacte d'un llamp i les seves conseqüències.",
 		crouch: "Ajupir-se fins a la posició més baixa possible. Mai tombar-se ni asseure's a terra.",
 		ears: "Protegir les orelles de l'esclat dels trons.",

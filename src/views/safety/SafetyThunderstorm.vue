@@ -34,7 +34,7 @@
 		<section class="cols">
 			<div class="col col--5">
 				<div class="box box--midtone1">
-					<h5>Posició de seguretat</h5>
+					<h5>{{ $t('safety.thunderstorm.position.position') }}</h5>
 					<p class="note text--s">
 						{{ $t('safety.thunderstorm.position.introduction') }}
 					</p>
