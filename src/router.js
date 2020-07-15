@@ -36,6 +36,7 @@ export default new Router({
 			children: [
 				{ path: '', component: () => import('./views/safety/SafetyBase.vue') },
 				{ path: 'base', component: () => import('./views/safety/SafetyBase.vue') },
+				{ path: 'gear', component: () => import('./views/safety/SafetyGear.vue') },
 				{ path: 'rescue', component: () => import('./views/safety/SafetyRescue.vue') },
 			],
 		},
