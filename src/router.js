@@ -30,6 +30,11 @@ export default new Router({
 			component: () => import('./views/Explore.vue'),
 		},
 		{
+			path: '/safety',
+			name: 'safety',
+			component: () => import('./views/Safety.vue'),
+		},
+		{
 			path: '/ui',
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
