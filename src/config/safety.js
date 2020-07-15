@@ -1,4 +1,4 @@
-export const sections = ['base'];
+export const sections = ['base', 'rescue'];
 
 export const principles = [
 	{ id: 'plan', icon: 'ri-draft-line' },

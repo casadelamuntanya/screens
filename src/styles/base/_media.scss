@@ -45,6 +45,19 @@ figure {
 	font-size: 1em;
 	color: inherit;
 	vertical-align: bottom;
+
+	&--success { color: $color-success; }
+	&--error { color: $color-alert; }
+
+	&--xs { font-size: size('xs'); }
+	&--s { font-size: size('s'); }
+	&--m { font-size: size('m'); }
+	&--l { font-size: size('l'); }
+	&--xl { font-size: size('xl'); }
+	&--xxl { font-size: size('xxl'); }
+	&--xxxl { font-size: size('xxxl'); }
+}
+
 .icons-box {
 	display: flex;
 
