@@ -8,3 +8,41 @@
 	height: size(7.5);
 	margin: size('m');
 }
+
+/* THUNDERSTORM */
+.safety-position {
+	margin: size('s') size('xxl') 0;
+
+	.icon {
+		background: $color-primary;
+		border-radius: 50%;
+		padding: size('xs');
+		font-size: size('m');
+		color: #fff;
+		animation: explode 3s ease-in-out infinite;
+	}
+
+	.popup {
+		background: $color-primary;
+		color: $color-light;
+		padding: size('m');
+		z-index: 1;
+		margin-bottom: 35px;
+		min-width: 250px;
+		box-sizing: border-box;
+		position: relative;
+
+		h6 { white-space: nowrap; }
+
+		&::after {
+			display: block;
+			content: '';
+			border: 8px solid transparent;
+			border-top-color: $color-primary;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -8px;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-export const sections = ['base', 'rescue', 'gear', 'wildlife'];
+export const sections = ['base', 'rescue', 'gear', 'wildlife', 'thunderstorm'];
 
 export const principles = [
 	{ id: 'plan', icon: 'ri-draft-line' },
@@ -82,3 +82,16 @@ export const species = [
 		],
 	},
 ];
+
+
+export const thunderstorm = {
+	tips: {
+		prevent: true,
+		remove_metal: true,
+		spread_group: true,
+		good_shelter: true,
+		safety_position: true,
+		no_running: false,
+		bad_shelter: false,
+	},
+};

@@ -2,6 +2,8 @@
 	height: 900px;
 
 	.icon {
+		--explode-from: #{$color-dark};
+
 		background: $color-dark;
 		border-radius: 50%;
 		padding: size('xs');
