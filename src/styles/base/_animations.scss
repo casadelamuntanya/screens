@@ -33,6 +33,6 @@
 }
 
 @keyframes explode {
-	0% { box-shadow: 0 0 0 0 rgba(#000, 1); }
-	50% { box-shadow: 0 0 0 size('s') rgba(#000, 0); }
+	0% { box-shadow: 0 0 0 0 var(--explode-from, $color-primary); }
+	50% { box-shadow: 0 0 0 size('s') transparent; }
 }
