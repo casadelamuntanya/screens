@@ -38,6 +38,7 @@ export default new Router({
 				{ path: 'base', component: () => import('./views/safety/SafetyBase.vue') },
 				{ path: 'gear', component: () => import('./views/safety/SafetyGear.vue') },
 				{ path: 'rescue', component: () => import('./views/safety/SafetyRescue.vue') },
+				{ path: 'wildlife', component: () => import('./views/safety/SafetyWildlife.vue') },
 			],
 		},
 		{

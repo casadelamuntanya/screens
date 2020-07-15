@@ -19,6 +19,8 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 
+	&--reverse { flex-direction: row-reverse; }
+
 	.col {
 		position: relative;
 		box-sizing: border-box;
