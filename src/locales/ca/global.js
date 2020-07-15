@@ -1,6 +1,7 @@
 export default {
 	nav: { menu: 'menu' },
 
+	know_more: 'Saber-ne més',
 	more_than: 'més de',
 	from: 'de',
 	to: 'a',

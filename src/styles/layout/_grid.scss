@@ -5,10 +5,12 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	position: relative;
 
 	.fill {
 		flex: 1;
 		overflow: auto;
+		position: relative;
 	}
 }
 
@@ -16,6 +18,8 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+
+	&--reverse { flex-direction: row-reverse; }
 
 	.col {
 		position: relative;

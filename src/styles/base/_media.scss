@@ -40,9 +40,48 @@ figure {
 	}
 }
 
+.youtube__credits {
+	margin-top: auto;
+	background: rgba(#000, 0.5);
+	color: #fff;
+	font-size: size('xxs');
+	padding: size('xxs');
+}
+
 .icon {
 	display: inline-block;
 	font-size: 1em;
 	color: inherit;
 	vertical-align: bottom;
+
+	&--success { color: $color-success; }
+	&--error { color: $color-alert; }
+
+	&--xs { font-size: size('xs'); }
+	&--s { font-size: size('s'); }
+	&--m { font-size: size('m'); }
+	&--l { font-size: size('l'); }
+	&--xl { font-size: size('xl'); }
+	&--xxl { font-size: size('xxl'); }
+	&--xxxl { font-size: size('xxxl'); }
+}
+
+.icons-box {
+	display: flex;
+
+	.icon { @extend .icon--xxl; }
+
+	.title {
+		@extend h5;
+
+		margin: size('m') 0;
+	}
+
+	aside {
+		@extend p;
+		@extend .note;
+		@extend .text--s;
+
+		margin: 0 size('s');
+	}
 }

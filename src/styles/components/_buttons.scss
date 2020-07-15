@@ -32,6 +32,7 @@
 	border-radius: $btn-radius;
 	cursor: pointer;
 	appearance: none;
+	white-space: nowrap;
 
 	@include btn-color($btn-bg-color, $btn-txt-color, $btn-border-color);
 
