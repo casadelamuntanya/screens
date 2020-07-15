@@ -9,6 +9,19 @@
 	margin: size('m');
 }
 
+/* HYPOTHERMIA */
+.hypothermia-symptoms {
+	margin-top: 60%;
+
+	strong {
+		display: block;
+		font-size: size(8);
+		margin-bottom: size('l');
+	}
+
+	ul li { @extend h5; }
+}
+
 /* THUNDERSTORM */
 .safety-position {
 	margin: size('s') size('xxl') 0;

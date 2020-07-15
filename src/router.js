@@ -39,6 +39,7 @@ export default new Router({
 				{ path: 'gear', component: () => import('./views/safety/SafetyGear.vue') },
 				{ path: 'rescue', component: () => import('./views/safety/SafetyRescue.vue') },
 				{ path: 'wildlife', component: () => import('./views/safety/SafetyWildlife.vue') },
+				{ path: 'hypothermia', component: () => import('./views/safety/SafetyHypothermia.vue') },
 				{ path: 'thunderstorm', component: () => import('./views/safety/SafetyThunderstorm.vue') },
 			],
 		},

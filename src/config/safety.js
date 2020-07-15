@@ -1,4 +1,4 @@
-export const sections = ['base', 'rescue', 'gear', 'wildlife', 'thunderstorm'];
+export const sections = ['base', 'rescue', 'gear', 'wildlife', 'thunderstorm', 'hypothermia'];
 
 export const principles = [
 	{ id: 'plan', icon: 'ri-draft-line' },
@@ -30,6 +30,40 @@ export const gear = {
 		'headlamp',
 		'sandals',
 	],
+};
+
+
+export const hypothermia = {
+	colors: ['#c23b22', '#BA4635', '#B15148', '#A95C5A', '#A1676D', '#987280', '#907D93', '#8888A5', '#7F93B8', '#779ECB'],
+	symptoms: {
+		normal: [36.6, 37],
+		chill: [32.1, 36.5],
+		sensory_loss: [28.5, 36.5],
+		speech_impairment: [28.5, 35],
+		memory_loss: [28.5, 34],
+		motor_uncoordination: [28.5, 34],
+		arrhythmia: [28.1, 29],
+		cardiorespiratory_arrest: [28.1, 29],
+		death: [28, 28],
+	},
+
+	prevention: {
+		eat_n_drink: true,
+		rest: true,
+		protect_hands_head: true,
+		adequate_clothes: true,
+		no_cotton: false,
+	},
+
+	treatment: {
+		call_emergency: true,
+		isolate_cold: true,
+		remove_wet: true,
+		warm_up: true,
+		warm_drinks: true,
+		no_acolohol: false,
+		no_heat: false,
+	},
 };
 
 
