@@ -1,5 +1,3 @@
-export const sections = ['base', 'rescue', 'gear', 'wildlife', 'thunderstorm', 'hypothermia'];
-
 export const principles = [
 	{ id: 'plan', icon: 'ri-draft-line' },
 	{ id: 'check', icon: 'ri-thunderstorms-line' },

@@ -4,7 +4,7 @@ nav.bar a {
 
 	color: color-shade($color-light, darkest);
 
-	&.router-link-active,
+	&.router-link-exact-active,
 	&.active {
 		color: $color-dark;
 		transform: scale(1.1);

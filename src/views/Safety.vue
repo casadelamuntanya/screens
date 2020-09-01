@@ -1,11 +1,11 @@
 <template lang="html">
 	<div class="stack">
-		<nav class="bar scroller">
+		<nav class="bar">
 			<router-link
 				v-for="section in sections"
 				:key="section"
-				:to="`/safety/${section}`">
-				{{ $t(`safety.sections.${section}`) }}
+				:to="`/safety/${section.path}`">
+				{{ $t(`safety.sections.${section.name}`) }}
 			</router-link>
 		</nav>
 		<router-view />
@@ -13,12 +13,14 @@
 </template>
 
 <script>
-import { sections } from '@/config/safety';
-
 export default {
 	name: 'safety',
 	data() {
-		return { sections };
+		return {
+			sections: this.$router.options.routes
+				.find(({ name }) => name === 'safety')
+				.children,
+		};
 	},
 };
 </script>

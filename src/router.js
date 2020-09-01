@@ -34,13 +34,36 @@ export default new Router({
 			name: 'safety',
 			component: () => import('./views/Safety.vue'),
 			children: [
-				{ path: '', component: () => import('./views/safety/SafetyBase.vue') },
-				{ path: 'base', component: () => import('./views/safety/SafetyBase.vue') },
-				{ path: 'gear', component: () => import('./views/safety/SafetyGear.vue') },
-				{ path: 'rescue', component: () => import('./views/safety/SafetyRescue.vue') },
-				{ path: 'wildlife', component: () => import('./views/safety/SafetyWildlife.vue') },
-				{ path: 'hypothermia', component: () => import('./views/safety/SafetyHypothermia.vue') },
-				{ path: 'thunderstorm', component: () => import('./views/safety/SafetyThunderstorm.vue') },
+				{
+					path: '',
+					name: 'base',
+					component: () => import('./views/safety/SafetyBase.vue'),
+				},
+				{
+					path: 'gear',
+					name: 'gear',
+					component: () => import('./views/safety/SafetyGear.vue'),
+				},
+				{
+					path: 'rescue',
+					name: 'rescue',
+					component: () => import('./views/safety/SafetyRescue.vue'),
+				},
+				{
+					path: 'wildlife',
+					name: 'wildlife',
+					component: () => import('./views/safety/SafetyWildlife.vue'),
+				},
+				{
+					path: 'hypothermia',
+					name: 'hypothermia',
+					component: () => import('./views/safety/SafetyHypothermia.vue'),
+				},
+				{
+					path: 'thunderstorm',
+					name: 'thunderstorm',
+					component: () => import('./views/safety/SafetyThunderstorm.vue'),
+				},
 			],
 		},
 		{
