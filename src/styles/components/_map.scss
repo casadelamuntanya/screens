@@ -1,7 +1,9 @@
 /* LEAFLET CONTROLS */
 // Leaflet-compare Control
 .leaflet-compare-thumb {
-	background-color: #2d2c2f !important;
+	--explode-from: #{$color-dark};
+
+	background-color: $color-dark !important;
 
 	.leaflet-compare-div-end & {
 		font-size: 40px;

@@ -32,10 +32,10 @@ export const map = {
 	maxBounds: [[42.254118, 1.261305], [42.754004, 1.902439]],
 	tiles: [
 		{
-			name: 'Topographic',
-			url: 'https://api.mapbox.com/styles/v1/markusand/ck4tte5dt1x7n1cod1yrxr0r1/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}',
+			name: 'Satellite',
+			url: 'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}',
 			options: {
-				attribution: '&copy; Marc Vilella',
+				attribution: '&copy; Mapbox',
 				accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
 			},
 		},
@@ -47,16 +47,16 @@ export const map = {
 		attribution: { position: 'bottomright', prefix: '&copy; Leaflet' },
 		compare: {
 			orientation: 'vertical',
-			position: '100%',
-			name: 'Satellite',
-			url: 'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}',
+			position: '0%',
+			name: 'Topographic',
+			url: 'https://api.mapbox.com/styles/v1/markusand/ck4tte5dt1x7n1cod1yrxr0r1/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}',
 			options: {
-				attribution: '&copy; Mapbox',
+				attribution: '&copy; Marc Vilella',
 				accessToken: process.env.VUE_APP_MAPBOX_TOKEN,
 			},
 		},
 		elevation: {
-			position: 'topright',
+			position: 'bottomright',
 			width: 500,
 			marker: {
 				centerOnHover: true,
