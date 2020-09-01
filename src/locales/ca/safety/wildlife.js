@@ -2,13 +2,13 @@ export default {
 	wildlife: 'espècies perilloses',
 
 	dangerous_species: 'espècies perilloses',
-	introduction: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+	introduction: "Les muntanyes d'Andorra, i els Pirineus en general, són un espai generalment segur on practicar activitats esportives i lúdiques. Tanmateix, s'hi poden trobar algunes espècies, tant animals com vegetals, que poden comportar un risc afegit si no se sap identificar-les.",
 
 	amanita_muscaria: {
 		name: 'Reig bord',
 		description: 'El reig bord és un bolet psicoactiu amb barret vermellós i esporada blanca. El peu, blanc i bulbós a la base, té un anell ample i fràgil també blanc.',
 		habitat: "Nadiu de les regions temperades i boreals de l'hemisferi nord, creix en boscos de coníferes i de caducifolis cap a final d'estiu o a l'entrant de la tardor.",
-		disclaimer: "No es tracta d'una espècie verinosa però sí indigesta, vòmica i al·lucinògena. La seva ingesta rarament produeix intoxicacions mortals.",
+		disclaimer: 'És una espècie altament indigesta, vòmica i al·lucinògena, però la seva ingesta rarament produeix intoxicacions mortals.',
 	},
 
 	aconitum: {

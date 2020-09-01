@@ -14,7 +14,7 @@ export default {
 		base: 'seguretat',
 		gear: 'equipament',
 		rescue: 'rescat',
-		wildlife: 'espècies',
+		wildlife: 'espècies perilloses',
 		thunderstorm: 'tempestes',
 		hypothermia: 'hipotèrmia',
 	},

@@ -1,13 +1,12 @@
 export default {
 	dangerous_species: 'dangerous species',
-	introduction: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
-	disclaimer: 'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime.',
+	introduction: 'The mountains of Andorra, and the Pyrenees in general, are a generally safe place to practice sports and leisure activities. However, there are some species, both animal and pants, which can carry an added risk if they are not properly identified.',
 
 	amanita_muscaria: {
 		name: 'Amanita muscaria',
 		description: 'Amanita muscaria is a psychoactive mushroom with a red hat and white spores. The stem, white and bulbous at the base, has a wide and fragile ring also white.',
 		habitat: 'Native throughout the temperate and boreal regions of the Northern Hemisphere, it grows in forests with deciduous and coniferous trees at the end of summer or early autumn',
-		disclaimer: 'It is not a poisonous species, but it is indigestible and hallucinogenic. Its ingestion rarely produces fatal intoxication.',
+		disclaimer: 'It is highly indigestible and hallucinogenic, but its ingestion rarely produces fatal intoxication.',
 	},
 
 	aconitum: {

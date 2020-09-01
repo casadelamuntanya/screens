@@ -1,10 +1,10 @@
 export default {
-	gear: 'mountain gear',
+	gear: 'mountain equipment',
 	introduction: 'In order to enjoy a mountain hike comfortably and to face any unforeseen incident safely it is essential to prepare the backpack with the material adapted to the conditions of the activity and the environment.',
-	quality: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+	select_equipment: 'Choosing the right material for each hiking is a task that is not improvised. In order to correctly adjust the material to the planned activity many factors must be taken into account, including the scope and characteristics of the activity, the time and duration, the type of terrain, the resources necessary to carry it out and all the people involved in it.',
 
 	essentials: 'essentials',
-	essentials_caption: 'Basic gear to carry in any mountain activity.',
+	essentials_caption: 'Basic equipment to carry in any mountain activity.',
 	essentials_disclaimer: 'The necessary equipment always depends on the activity to be performed. The list of basic material must be completed according to the specific requirements of the activity (overnight stays in the mountains, winter outings, specific sporting activity, etc.).',
 	recommended: 'recommended',
 	items: {

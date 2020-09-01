@@ -19,8 +19,7 @@
 			<div class="col col--auto">
 				<div class="box">
 					<p>{{ $t('safety.gear.introduction') }}</p>
-					<p class="note">{{ $t('safety.gear.quality') }}</p>
-					<p class="note">{{ $t('safety.gear.quality') }}</p>
+					<p>{{ $t('safety.gear.select_equipment') }}</p>
 				</div>
 			</div>
 		</section>

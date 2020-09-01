@@ -12,7 +12,7 @@ export default {
 
 	sections: {
 		base: 'safety',
-		gear: 'gear',
+		gear: 'equipment',
 		rescue: 'rescue',
 		wildlife: 'dangerous species',
 		thunderstorm: 'thunderstorm',

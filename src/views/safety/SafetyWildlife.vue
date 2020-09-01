@@ -2,7 +2,7 @@
 	<div class="fill stack">
 
 		<!-- Title -->
-		<section class="fill cols">
+		<section class="cols">
 			<div class="col col--4">
 				<div class="box">
 					<h3>{{ $t('safety.wildlife.dangerous_species') }}</h3>
@@ -10,13 +10,17 @@
 			</div>
 			<div class="col col--auto">
 				<div class="box">
-					<p class="note">{{ $t('safety.wildlife.introduction') }}</p>
+					<p>{{ $t('safety.wildlife.introduction') }}</p>
 				</div>
 			</div>
 		</section>
 
 		<!-- Species -->
-		<section v-for="(specie, i) in species" :key="specie.name" :class="rowClass(i)">
+		<section
+			v-for="(specie, i) in species"
+			:key="specie.name"
+			:class="rowClass(i)"
+			class="fill">
 			<div class="col col--auto">
 				<div class="box box--midtone1">
 					<h4>{{ $t(`safety.wildlife.${specie.name}.name`) }}</h4>

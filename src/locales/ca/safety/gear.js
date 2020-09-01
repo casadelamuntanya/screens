@@ -2,7 +2,7 @@ export default {
 	gear: 'equipament',
 
 	introduction: "Per gaudir amb comoditat d'una excursió a la muntanya i poder afrontar qualsevol imprevist de manera segura és imprescindible preparar la motxilla amb el material adaptat a les condicions de l'activitat i de l'entorn.",
-	quality: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+	select_equipment: "Escollir bé el material de cada sortida és una tasca que no s'improvisa. Per ajustar correctament el material a l'activitat prevista s'ha de tenir present l'àmbit i les característiques de l'activitat, el moment i la seva duració, el tipus de terreny, els recursos necessaris per a dur-la a terme i totes les persones involucrades.",
 
 	essentials: 'imprescindible',
 	essentials_caption: 'Material bàsic per dur en qualsevol activitat de muntanya.',
