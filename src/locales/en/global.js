@@ -15,5 +15,6 @@ export default {
 	404: {
 		not_available: 'This section is not available yet',
 		come_back: "We're working to finish it for your next visit",
+		go_back: 'Go back',
 	},
 };
