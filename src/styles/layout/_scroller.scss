@@ -1,20 +1,5 @@
 .scroller {
-	overflow-x: auto;
-	white-space: nowrap;
-	scroll-snap-type: x mandatory;
-
-	// Hide scrollbar
-	scrollbar-width: none;
-	&::-webkit-scrollbar { display: none; }
-
-	& > * {
-		display: inline-block;
-		white-space: normal;
-		vertical-align: middle;
-		scroll-snap-align: center;
-	}
-
-	&:empty {
+	&__inner:empty {
 		display: flex;
 		color: color-shade($color-light, darker);
 		min-height: 100px;

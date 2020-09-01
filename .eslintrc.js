@@ -27,6 +27,7 @@ module.exports = {
 			ignorePropertyModificationsFor: [
 				'acc', // for reduce accumulators
 				'state', // for Vuex store
+				'el', // for custom directives target element
 			]
 		}],
 		'no-shadow': ['error', { 'allow': ['response', 'data'] }],

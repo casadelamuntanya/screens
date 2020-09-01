@@ -1,15 +1,15 @@
 <template lang="html">
   <div class="stack">
 		<trail-filters v-model="filterTrail">
-			<div
-				class="scroller trail-cards"
-				:data-empty="$t('explore.empty_trail_search')">
+			<scroller
+				class="trail-cards"
+				:empty-msg="$t('explore.empty_trail_search')">
 				<trail-card
 					v-for="trail in filteredTrails"
 					:key="trail.name"
 					:trail="trail"
 					v-model="selectedTrail" />
-			</div>
+			</scroller>
 		</trail-filters>
 		<leaflet-map name="explore" class="fill" :options="mapOptions">
 			<leaflet-path
@@ -25,6 +25,7 @@
 import axios from 'axios';
 import api from '@/apis/airtable.explore';
 import { LeafletMap, LeafletPath } from '@/components/leaflet/leaflet';
+import Scroller from '@/components/Scroller.vue';
 import TrailCard from '@/components/TrailCard.vue';
 import TrailFilters from '@/components/TrailFilters.vue';
 
@@ -36,7 +37,7 @@ import {
 
 export default {
 	name: 'explore',
-	components: { LeafletMap, LeafletPath, TrailCard, TrailFilters },
+	components: { LeafletMap, LeafletPath, TrailCard, TrailFilters, Scroller },
 	data() {
 		return {
 			mapOptions,
