@@ -1,6 +1,7 @@
 <template>
 	<div class="stack">
 		<youtube-video :video-id="introYoutubeVideo" :subs="$i18n.locale" />
+		<hr/>
 		<div class="cols">
 			<div class="col col--4">
 				<div class="box">

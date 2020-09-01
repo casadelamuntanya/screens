@@ -2,6 +2,7 @@
 	<div class="fill stack">
 
 		<!-- Title -->
+		<hr />
 		<section class="cols">
 			<div class="col col--4">
 				<div class="box">
@@ -14,6 +15,7 @@
 				</div>
 			</div>
 		</section>
+		<hr/>
 
 		<!-- Species -->
 		<section

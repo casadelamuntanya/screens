@@ -9,6 +9,7 @@
 			credits="Video by Mike Olbinski from Youtube" />
 
 		<!-- Main -->
+		<hr/>
 		<section class="fill cols">
 			<div class="col col--4">
 				<div class="box">
@@ -21,6 +22,7 @@
 				</div>
 			</div>
 		</section>
+		<hr/>
 
 		<section class="box box--dark">
 			<p>{{ $t('safety.thunderstorm.calc_distance.introduction') }}</p>

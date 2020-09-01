@@ -2,6 +2,7 @@
 	<div class="fill stack">
 
 		<!-- Animation -->
+		<hr/>
 		<section class="fill cols">
 			<div class="col col--6">
 				<div class="box align-center" v-swipe="swipeTemperature">
@@ -25,6 +26,7 @@
 		</section>
 
 		<!-- Title -->
+		<hr/>
 		<section class="cols">
 			<div class="col col--4">
 				<div class="box">
@@ -37,6 +39,7 @@
 				</div>
 			</div>
 		</section>
+		<hr/>
 
 		<!-- Prevention and treatment -->
 		<section class="cols">
