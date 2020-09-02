@@ -67,6 +67,16 @@ export default new Router({
 			],
 		},
 		{
+			path: '/kids',
+			name: 'kids',
+			component: () => import('./views/Kids.vue'),
+		},
+		{
+			path: '/kids/memorama',
+			name: 'memorama',
+			component: () => import('./views/kids/KidsMemorama.vue'),
+		},
+		{
 			path: '/ui',
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
