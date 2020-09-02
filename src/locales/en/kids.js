@@ -11,6 +11,14 @@ export default {
 			expert: 'Expert',
 		},
 
+		fingerpaint: {
+			name: 'Fingerpaint',
+			instructions: 'Colorize with your finger',
+			drawing: 'drawing',
+			color: 'color',
+			size: 'stroke',
+		},
+
 		memorama: {
 			name: 'Memorama',
 			instructions: 'Turn the cards over and find the pairs.',

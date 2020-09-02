@@ -11,6 +11,14 @@ export default {
 			expert: 'Expert',
 		},
 
+		fingerpaint: {
+			name: 'Ditades',
+			instructions: 'Coloreja els dibuixos amb el dit',
+			drawing: 'dibuix',
+			color: 'color',
+			size: 'gruix',
+		},
+
 		memorama: {
 			name: 'Memorama',
 			instructions: 'Dona la volta a les cartes i troba totes les parelles.',

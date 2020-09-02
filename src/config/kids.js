@@ -1,4 +1,4 @@
-export const games = ['memorama'];
+export const games = ['memorama', 'fingerpaint'];
 
 export const memorama = {
 	FLIP_WAIT_TIME: 1500,
@@ -7,3 +7,8 @@ export const memorama = {
 	cards: ['bear', 'fox', 'frog', 'hedgehog', 'otter', 'owl', 'squirrel', 'goat', 'cow', 'raccoon'],
 };
 
+export const draw = {
+	colors: ['#fe2712', '#fd5308', '#fb9902', '#fabc02', '#fefe33', '#d0ea2b', '#66b032', '#0391ce', '#0247fe', '#3d01a4', '#8601af', '#654321', '#000', '#888', '#fff'],
+	sizes: [5, 15, 35, 50],
+	drawings: ['bear_honey', 'hiker', 'nature_trail'],
+};

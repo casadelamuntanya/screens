@@ -77,6 +77,11 @@ export default new Router({
 			component: () => import('./views/kids/KidsMemorama.vue'),
 		},
 		{
+			path: '/kids/fingerpaint',
+			name: 'draw',
+			component: () => import('./views/kids/KidsFingerpaint.vue'),
+		},
+		{
 			path: '/ui',
 			name: 'user-interface',
 			component: () => import('./views/UserInterface.vue'),
