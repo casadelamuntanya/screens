@@ -22,11 +22,8 @@ export default {
 		floor: "Romandre sobre la punta dels peus per minimitzar el contacte amb el terra. Augmentar l'aïllament amb la motxilla o l'esterilla.",
 	},
 
-	calc_distance: {
-		distance: 'distància',
-		seconds: 'segons',
-
-		introduction: "Saber la distància a la qual es troba una tempesta pot resultar de vital importància a l'hora de trobar un refugi segur. Aplicant una senzilla formula, es pot conèixer de manera bastant aproximada la distància en kilòmetres, només contant els segons que transcorren entre que es veu el llamp i se sent el tro.",
+	distance: {
+		intro: "Saber la distància a la que es troba una tempesta pot resultar de vital importància a l'hora de trobar un refugi segur. Aplicant una senzilla formula, es pot conèixer de manera bastant aproximada la distància en kilòmetres, només contant els segons que transcorren entre que es veu el llamp i se sent el tro i dividint-ho per 3.",
 
 		direction: "Per saber si la tempesta s'apropa o s'allunya només cal repetir aquesta mesura en un intèrval d'un o dos minuts.",
 

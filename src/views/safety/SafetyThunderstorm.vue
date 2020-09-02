@@ -24,14 +24,20 @@
 		</section>
 		<hr/>
 
-		<section class="box box--dark">
-			<p>{{ $t('safety.thunderstorm.calc_distance.introduction') }}</p>
-			<p class="text--xl align-center">
-				{{ $t('safety.thunderstorm.calc_distance.distance') }} (km) =
-				{{ $t('safety.thunderstorm.calc_distance.seconds') }} / 3</p>
-			<p>{{ $t('safety.thunderstorm.calc_distance.direction') }}</p>
-			<p class="note text--s">{{ $t('safety.thunderstorm.calc_distance.explanation') }}</p>
+		<section class="cols">
+			<div class="col col--6">
+				<div class="box box--dark">
+					<p>{{ $t('safety.thunderstorm.distance.intro') }}</p>
+					<p>{{ $t('safety.thunderstorm.distance.direction') }}</p>
+				</div>
+			</div>
+			<div class="col col--auto">
+				<div class="box box--dark hero">
+					<p class="text--xxxl">km = s / 3</p>
+				</div>
+			</div>
 		</section>
+		<hr/>
 
 		<section class="cols">
 			<div class="col col--5">

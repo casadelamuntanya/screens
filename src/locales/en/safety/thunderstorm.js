@@ -22,11 +22,8 @@ export default {
 		floor: 'Minimize contact with floor staying on the balls of your feet.',
 	},
 
-	calc_distance: {
-		distance: 'distance',
-		seconds: 'seconds',
-
-		introduction: 'Knowing the distance from a storm can be of vital importance when it comes to finding a safe haven. By applying a simple formula, you can know the distance, in kilometres, just by counting the seconds between the lightning and the thunder.',
+	distance: {
+		intro: 'Knowing the distance from a storm can be of vital importance when it comes to finding a safe haven. By applying a simple formula, you can know the distance, in kilometres, just by counting the seconds between the lightning and the thunder and dividing by 3.',
 
 		direction: 'Repeat the measurement to know if thunderstorm is getting closer or moving far away.',
 
