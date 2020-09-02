@@ -3,6 +3,7 @@ import nav from './navigation';
 import about from './about';
 import explore from './explore';
 import safety from './safety';
+import kids from './kids';
 
 export default {
 	locale_name: 'english',
@@ -12,4 +13,5 @@ export default {
 	about,
 	explore,
 	safety,
+	kids,
 };
