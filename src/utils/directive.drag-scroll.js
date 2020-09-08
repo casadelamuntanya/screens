@@ -3,7 +3,7 @@ export default {
 		el.dX = 0;
 
 		el.scroll = ({ movementX }) => {
-			const max = el.clientWidth - el.scrollWidth - el.children[0].offsetLeft;
+			const max = el.clientWidth - el.children[0].scrollWidth - el.children[0].offsetLeft;
 			el.dX = Math.max(max, Math.min(el.dX + movementX, 0));
 			el.children[0].style.transform = `translateX(${el.dX}px)`;
 			el.isScroll = true;
