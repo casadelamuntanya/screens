@@ -8,7 +8,8 @@ const constrain = (number, min, max) => Math.min(max, Math.max(min, number));
 L.Control.Compare = L.Control.extend({
 
 	options: {
-		position: '50%',
+		position: 'topleft',
+		thumbPosition: '50%',
 		orientation: 'horizontal',
 	},
 
@@ -26,7 +27,7 @@ L.Control.Compare = L.Control.extend({
 
 
 	onAdd(map) {
-		const { orientation, position } = this.options;
+		const { orientation, thumbPosition } = this.options;
 		this._map = map;
 		this._compare = L.DomUtil.create('div', 'leaflet-compare', map._controlContainer);
 		this._divider = L.DomUtil.create('div', `leaflet-compare-div-${orientation}`, this._compare);
@@ -39,7 +40,7 @@ L.Control.Compare = L.Control.extend({
 		this._map.on('resize', this._onResize, this);
 		this._map.on('layeradd layerremove', this._changeLayers, this);
 
-		this._setPosition(position);
+		this._setthumbPosition(thumbPosition);
 		this._update();
 
 		return this;
@@ -64,7 +65,7 @@ L.Control.Compare = L.Control.extend({
 		const nw = this._map.containerPointToLayerPoint([0, 0]);
 		const se = this._map.containerPointToLayerPoint(mapSize);
 
-		const clip = (this._horizontal ? nw.x : nw.y) + this._position;
+		const clip = (this._horizontal ? nw.x : nw.y) + this._thumbPosition;
 		const beforeClip = this._horizontal
 			? `rect(${[nw.y, clip, se.y, nw.x].join('px,')}px)`
 			: `rect(${[nw.y, se.x, clip, nw.x].join('px,')}px)`;
@@ -74,24 +75,26 @@ L.Control.Compare = L.Control.extend({
 
 		if (this._beforeLayer) this._beforeLayer.getContainer().style.clip = beforeClip;
 		if (this._afterLayer) this._afterLayer.getContainer().style.clip = afterClip;
-		this._divider.style[this._horizontal ? 'left' : 'top'] = `${this._position}px`;
+		this._divider.style[this._horizontal ? 'left' : 'top'] = `${this._thumbPosition}px`;
 
 		return this;
 	},
 
 
-	_setPosition(position) {
+	_setthumbPosition(thumbPosition) {
 		const { width, height } = this._compare.getBoundingClientRect();
 		const mapSize = this._map.getSize();
 		const maxSize = this._horizontal ? mapSize.x : mapSize.y;
 
-		const pos = typeof position === 'string' && position.includes('%')
-			? (parseFloat(position) * maxSize) / 100
-			: position;
+		const pos = typeof thumbPosition === 'string' && thumbPosition.includes('%')
+			? (parseFloat(thumbPosition) * maxSize) / 100
+			: thumbPosition;
 
-		this._position = constrain(Math.round(pos), 0, this._horizontal ? width : height);
-		const isStart = this._position === 0;
-		const isEnd = this._horizontal ? this._position === width : this._position === height;
+		this._thumbPosition = constrain(Math.round(pos), 0, this._horizontal ? width : height);
+		const isStart = this._thumbPosition === 0;
+		const isEnd = this._horizontal
+			? this._thumbPosition === width
+			: this._thumbPosition === height;
 		if (isStart || isEnd) this._divider.classList.add('leaflet-compare-div-end');
 		else this._divider.classList.remove('leaflet-compare-div-end');
 
@@ -116,8 +119,8 @@ L.Control.Compare = L.Control.extend({
 	_onDrag(event) {
 		const e = event.touches ? event.touches[0] : event;
 		const { left, top } = this._compare.getBoundingClientRect();
-		const position = this._horizontal ? e.clientX - left : e.clientY - top;
-		this._setPosition(position);
+		const thumbPosition = this._horizontal ? e.clientX - left : e.clientY - top;
+		this._setthumbPosition(thumbPosition);
 	},
 
 
@@ -131,7 +134,7 @@ L.Control.Compare = L.Control.extend({
 	},
 
 	_onResize() {
-		this._setPosition(this._position);
+		this._setthumbPosition(this._thumbPosition);
 	},
 
 
@@ -142,4 +145,4 @@ L.Control.Compare = L.Control.extend({
 	},
 });
 
-L.control.compare = (a, b, c) => new L.Control.Compare(a, b, c);
+L.control.compare = (layers, compare, opts) => new L.Control.Compare(layers, compare, opts);

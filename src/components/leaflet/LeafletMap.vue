@@ -54,10 +54,10 @@ export default {
 			if (layers) control.layers(this.tiles, null, layers).addTo(this.map);
 			if (elevation) control.elevation(elevation).addTo(this.map);
 			if (compare) {
-				const { url, options, orientation, position } = compare;
+				const { url, options, orientation, thumbPosition } = compare;
 				const tiles = Object.values(this.tiles);
 				const compareTile = tileLayer(url, options).addTo(this.map);
-				control.compare(tiles, compareTile, { orientation, position }).addTo(this.map);
+				control.compare(tiles, compareTile, { orientation, thumbPosition }).addTo(this.map);
 			}
 		},
 		async panTo(center, options) {

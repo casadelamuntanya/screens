@@ -47,7 +47,7 @@ export const map = {
 		attribution: { position: 'bottomright', prefix: '&copy; Leaflet' },
 		compare: {
 			orientation: 'vertical',
-			position: '0%',
+			thumbPosition: '0%',
 			name: 'Topographic',
 			url: 'https://api.mapbox.com/styles/v1/markusand/ck4tte5dt1x7n1cod1yrxr0r1/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}',
 			options: {
