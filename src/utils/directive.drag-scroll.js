@@ -1,12 +1,14 @@
 export default {
-	inserted(el) {
-		el.dX = 0;
+	inserted(el, binding) {
+		el.scrollX = 0;
 
 		el.scroll = ({ movementX }) => {
+			const { arg = 5 } = binding;
 			const max = el.clientWidth - el.children[0].scrollWidth - el.children[0].offsetLeft;
-			el.dX = Math.max(max, Math.min(el.dX + movementX, 0));
-			el.children[0].style.transform = `translateX(${el.dX}px)`;
-			el.isScroll = true;
+			el.dX += movementX;
+			el.scrollX = Math.max(max, Math.min(el.scrollX + movementX, 0));
+			el.children[0].style.transform = `translateX(${el.scrollX}px)`;
+			if (Math.abs(el.dX) > arg) el.isScroll = true;
 		};
 
 		el.finish = () => {
@@ -17,6 +19,7 @@ export default {
 		el.addEventListener('mousedown', () => {
 			el.addEventListener('mousemove', el.scroll);
 			el.addEventListener('mouseleave', el.finish);
+			el.dX = 0;
 			el.isScroll = false;
 		});
 
