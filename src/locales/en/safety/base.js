@@ -15,14 +15,14 @@ export default {
 		},
 		warn: {
 			title: 'Warn',
-			description: 'Tell  trustworthy someone about the details of the planned activity.',
+			description: 'Tell trustworthy someone about the details of the planned activity.',
 		},
 		adapt: {
 			title: 'Adapt',
 			description: 'Adapt the activity to your physical and technical limits and to the current conditions.',
 		},
 		equipment: {
-			title: 'Equipment',
+			title: 'Equip youself',
 			description: 'Bring appropriate equipment and enough supplies to deal with any unforeseen events.',
 		},
 	},

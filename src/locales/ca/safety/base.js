@@ -7,24 +7,24 @@ export default {
 	basic_principles: 'principis bàsics de seguretat',
 	principles: {
 		plan: {
-			title: 'Planificar',
-			description: 'Consultar informació, guies i mapes actualitzats. Respectar la senyalització.',
+			title: 'Planifica',
+			description: 'Consulta informació, guies i mapes actualitzats. Respecta la senyalització.',
 		},
 		check: {
-			title: 'Verificar',
-			description: "Revisar les condicions meteo i l'estat de la neu, i la seva possible evolució.",
+			title: 'Verifica',
+			description: "Revisa les condicions meteo i l'estat de la neu, i la seva possible evolució.",
 		},
 		warn: {
-			title: 'Avisar',
-			description: "No anar sol. Comunicar a algú de confiança els detalls sobre l'activitat prevista.",
+			title: 'Avisa',
+			description: "No vagis sol. Comunica a algú de confiança els detalls sobre l'activitat prevista.",
 		},
 		adapt: {
-			title: 'Adaptar-se',
-			description: "Adaptar l'activitat als propis límits físics i tècnics​, així com a les condicions actuals.",
+			title: "Adapta't",
+			description: "Adapta l'activitat als propis límits físics i tècnics​, així com a les condicions actuals.",
 		},
 		equipment: {
-			title: 'Equipament',
-			description: 'Portar equip i avituallament suficient per afrontar possibles imprevistos.',
+			title: "Equipa't",
+			description: 'Porta equip i avituallament suficient per afrontar possibles imprevistos.',
 		},
 	},
 };
