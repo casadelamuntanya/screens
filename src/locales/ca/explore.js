@@ -7,6 +7,7 @@ export default {
 			wildlife: 'fauna',
 			flora: 'flora',
 			culture: 'patrimoni cultural',
+			origin: 'Parròquia de sortida',
 		},
 
 		wildlife: {
@@ -32,6 +33,16 @@ export default {
 			DRY_STONE: 'pedra seca',
 			ART: 'art',
 			ROMANESQUE: 'romànic',
+		},
+
+		origin: {
+			CANILLO: 'Canillo',
+			ENCAMP: 'Encamp',
+			ORDINO: 'Ordino',
+			LA_MASSANA: 'La Massana',
+			ANDORRA_LA_VELLA: 'Andorra la Vella',
+			SANT_JULIA_DE_LORIA: 'Sant Julià de Lòria',
+			ESCALDES_ENGORDANY: 'Escaldes-Engordany',
 		},
 	},
 

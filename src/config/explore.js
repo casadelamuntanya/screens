@@ -2,7 +2,7 @@
 export const query = {
 	base: 'appMWr6cRQN40oIM2',
 	table: '/trails',
-	fields: ['name', 'duration', 'distance', 'drop_positive', 'drop_negative', 'seasonality', 'do_it_now', 'profile', 'img', 'track', 'milestones', 'wildlife', 'flora', 'culture'],
+	fields: ['name', 'duration', 'distance', 'drop_positive', 'drop_negative', 'seasonality', 'do_it_now', 'profile', 'img', 'track', 'milestones', 'wildlife', 'flora', 'culture', 'origin'],
 	localeFields: ['name'],
 };
 
@@ -14,12 +14,13 @@ export const filters = {
 		{ attr: 'drop_positive', limits: [0, 2000], step: 100, unit: { from: 'm', to: 'm' } },
 	],
 	pickers: [
-		{ attr: 'culture', options: ['ROMANESQUE', 'DRY_STONE', 'ART'] },
+		{ attr: 'origin', options: ['CANILLO', 'ENCAMP', 'ORDINO', 'LA_MASSANA', 'ANDORRA_LA_VELLA', 'SANT_JULIA_DE_LORIA', 'ESCALDES_ENGORDANY'] },
+		{ attr: 'culture', options: ['ROMANESQUE', /* 'DRY_STONE', */ 'ART'] },
 		{
 			attr: 'wildlife',
 			options: ['RUPICABRA', 'CAPREOLUS', 'OVIS_MUSIMON', 'MARMOTA', 'LUTRINAE', 'SALMO_TRUTTA', 'TRITURUS', 'LACERTA', 'TETRAO', 'LAGOPUS', 'ATHENE_NOCTUA'],
 		},
-		{ attr: 'flora', options: ['NARCISSUS_POETICUS', 'SINGULAR_TREE'] },
+		// { attr: 'flora', options: ['NARCISSUS_POETICUS', 'SINGULAR_TREE'] },
 	],
 };
 

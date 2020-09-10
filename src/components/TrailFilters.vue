@@ -66,6 +66,7 @@ const { profiles, ranges, pickers } = filtersConfig;
 const currentMonth = new Date().toLocaleString('en', { month: 'short' }).toUpperCase();
 
 const inRange = (value, min, max) => value >= min && value <= max;
+const isAny = (item, items) => !items.length || items.includes(item);
 const hasAny = (arr, items) => !items.length || (arr && items.some(i => arr.includes(i)));
 
 export default {
@@ -93,7 +94,11 @@ export default {
 		advancedFilters() {
 			const advancedFilters = [
 				// Collection of filters that check if an array contains ANY of the picked options
-				...this.pickers.map(({ attr, values }) => trail => hasAny(trail[attr], values)),
+				...this.pickers.map(({ attr, values }) => trail => (
+					Array.isArray(trail[attr])
+						? hasAny(trail[attr], values)
+						: isAny(trail[attr], values)
+				)),
 				// Collection of filters that check if a trail attribute is inside range
 				...this.ranges.map(({ attr, values, limits }) => {
 					const max = values[1] === limits[1] ? Infinity : values[1];
