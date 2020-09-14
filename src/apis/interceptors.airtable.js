@@ -6,7 +6,7 @@ export const requestInterceptor = (config) => {
 	config.headers.Authorization = `Bearer ${apiKey}`;
 
 	// Add locale tail to localized fields
-	const { fields, localeFields, locale } = config.params;
+	const { fields, localeFields, locale } = config.params || {};
 	if (localeFields) {
 		config.params.fields = fields.map(field => (
 			localeFields.includes(field)
@@ -20,7 +20,7 @@ export const requestInterceptor = (config) => {
 
 export const responseInterceptor = (response) => {
 	const { data, config } = response;
-	const { localeFields, locale } = config.params;
+	const { localeFields, locale } = config.params || {};
 	// Format default Airtable response to a flat array of objects
 	return data.records.map(({ id, fields }) => {
 		// Remove locale trail to localized fields

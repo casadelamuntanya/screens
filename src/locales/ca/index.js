@@ -4,6 +4,7 @@ import about from './about';
 import explore from './explore';
 import safety from './safety';
 import kids from './kids';
+import exhibitions from './exhibitions';
 
 export default {
 	locale_name: 'català',
@@ -14,4 +15,5 @@ export default {
 	explore,
 	safety,
 	kids,
+	exhibitions,
 };

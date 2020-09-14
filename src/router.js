@@ -87,6 +87,11 @@ export default new Router({
 			component: () => import('./views/UserInterface.vue'),
 		},
 		{
+			path: '/exhibitions',
+			name: 'exhibitions',
+			component: () => import('./views/Exhibitions.vue'),
+		},
+		{
 			path: '*',
 			name: 'not-found',
 			component: () => import('./views/404.vue'),
