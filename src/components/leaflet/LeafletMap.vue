@@ -85,6 +85,7 @@ export default {
 		this.map = map(name, {
 			...options,
 			zoomControl: false,
+			scrollWheelZoom: false,
 			attributionControl: false,
 			layers: Object.values(tiles),
 		});
