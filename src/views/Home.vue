@@ -9,7 +9,7 @@
 				<template v-for="locale in locales">
 					<div
 						v-for="i in 5"
-						:key="`${locale}.${i}`"
+						:key="`${locale.code}.${i}`"
 						:class="`flying flying--${i}`"
 						:style="`
 							--height:${Math.random() * 100}vh;
