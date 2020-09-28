@@ -2,16 +2,16 @@
 	<section id="page-kids-memorama" class="kids">
 		<div class="memorama">
 			<!-- Select level -->
-			<div v-if="!level">
+			<div v-if="!pairs">
 				<h3>{{ $t('kids.games.levels.choose_level') }}</h3>
 				<p>
-					<button class="btn" @click="init(1)">
+					<button class="btn" @click="init(3)">
 						{{ $t('kids.games.levels.beginner') }}
 					</button>
-					<button class="btn" @click="init(2)">
+					<button class="btn" @click="init(5)">
 						{{ $t('kids.games.levels.advanced') }}
 					</button>
-					<button class="btn" @click="init(3)">
+					<button class="btn" @click="init(7)">
 						{{ $t('kids.games.levels.expert') }}
 					</button>
 				</p>
@@ -35,7 +35,7 @@
 							:style="`--tilt:${card.tilt}deg`"
 							@click="flip(i)">
 							<div class="memorama-card__front">
-								<img :src="`/assets/images/kids/animals/${card.type}.png`">
+								<img :src="`/assets/images/kids/animals/${card.type}.svg`">
 								{{ $t(`kids.games.memorama.cards.${card.type}`) }}
 							</div>
 							<div class="memorama-card__back">
@@ -45,7 +45,7 @@
 					</li>
 				</transition-group>
 				<p>
-					<button class="btn" @click="init(level)">
+					<button class="btn" @click="init(pairs)">
 						{{ $t('kids.games.restart') }}
 					</button>
 					<button class="btn btn--alert" @click="close">
@@ -73,7 +73,7 @@ export default {
 	name: 'KidsMemorama',
 	data() {
 		return {
-			level: undefined,
+			pairs: undefined,
 			wait: false,
 			cards: [],
 			movements: 0,
@@ -85,10 +85,9 @@ export default {
 		},
 	},
 	methods: {
-		init(level = 1) {
+		init(pairs = 2) {
 			this.attempts = 0;
-			this.level = level;
-			const pairs = 4 + (level - 1) * 2;
+			this.pairs = pairs;
 			const allCards = shuffle(cards).slice(0, pairs).flatMap(card => Array(2).fill(card));
 			this.cards = allCards.map((type, id) => {
 				const tilt = Math.round(Math.random() * (TILT_MAX - TILT_MIN) + TILT_MIN);
@@ -98,7 +97,7 @@ export default {
 		},
 		close() {
 			this.cards = [];
-			this.level = undefined;
+			this.pairs = undefined;
 		},
 		cardClass(card) {
 			return ['memorama-card', {
@@ -188,6 +187,12 @@ export default {
 			box-shadow: 0 10px 20px 5px rgba(#000, 0.2);
 			font-family: 'omiwa', 'Arial', sans-serif !important;
 			font-size: 23px;
+		}
+
+		&__front img {
+			height: 120px;
+			width: 100px;
+			margin-bottom: 15px;
 		}
 
 		&__back {
