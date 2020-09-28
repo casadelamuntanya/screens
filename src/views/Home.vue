@@ -6,17 +6,6 @@
 					svg-inline
 					src="@/assets/vectors/logos/cdm.svg"
 					class="logo logo--xxxl logo--animate" />
-				<template v-for="locale in locales">
-					<div
-						v-for="i in 5"
-						:key="`${locale.code}.${i}`"
-						:class="`flying flying--${i}`"
-						:style="`
-							--height:${Math.random() * 100}vh;
-							--delay:${Math.random() * 20}s`">
-						{{ touch_me[locale.code] }}
-					</div>
-				</template>
 			</div>
 			<div v-if="isNavigation">
 				<nav class="bar">
@@ -61,10 +50,6 @@ export default {
 			layout,
 			sections,
 			isNavigation: this.activeNavigation,
-			touch_me: {
-				ca: "Toca'm",
-				en: 'Touch me',
-			},
 		};
 	},
 	computed: {
