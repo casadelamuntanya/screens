@@ -11,14 +11,14 @@
 				<legend align="center">{{ $t('kids.games.fingerpaint.drawing') }}</legend>
 				<label v-for="drawing in drawings" :key="drawing">
 					<input type="radio" v-model="canvasDrawing" :value="drawing">
-					<img :src="`/assets/images/kids/coloring/${drawing}.png`">
+					<img :src="`/assets/images/kids/coloring/${drawing}.svg`">
 				</label>
 			</fieldset>
 			<div class="fingerpaint__board">
 				<canvas ref="drawboard" :width="canvas.width" :height="canvas.height" />
 				<img
 					v-if="canvasDrawing"
-					:src="`/assets/images/kids/coloring/${canvasDrawing}.png`">
+					:src="`/assets/images/kids/coloring/${canvasDrawing}.svg`">
 			</div>
 			<fieldset class="fingerpaint__color">
 				<legend align="center">{{ $t('kids.games.fingerpaint.color') }}</legend>
@@ -125,8 +125,8 @@ export default {
 
 		img {
 			position: absolute;
-			max-height: 100%;
-			max-width: 100%;
+			height: 100%;
+			width: 100%;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
