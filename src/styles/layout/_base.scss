@@ -70,35 +70,3 @@ hr {
 	margin: 0;
 	border: 0;
 }
-
-/* FLYING TEXT */
-.flying {
-	--height: 0;
-	--delay: 0;
-
-	top: 0;
-	left: 0;
-	font-family: 'Oswald', sans-serif;
-	position: absolute;
-	white-space: nowrap;
-	opacity: 0.5;
-	font-size: 2em;
-	animation: fly 20s linear var(--delay) infinite both;
-
-	&--1 {
-		font-size: 30em;
-		opacity: 0.02;
-	}
-
-	&--4,
-	&--2 {
-		font-size: 15em;
-		opacity: 0.05;
-	}
-
-	&--5,
-	&--3 {
-		font-size: 4em;
-		opacity: 0.4;
-	}
-}
