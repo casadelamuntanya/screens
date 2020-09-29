@@ -16,6 +16,7 @@
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
+	cursor: none !important;
 
 	& > header {
 		margin: size($base-padding);
