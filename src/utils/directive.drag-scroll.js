@@ -29,4 +29,8 @@ export default {
 			if (el.isScroll) event.stopImmediatePropagation();
 		}, true);
 	},
+
+	update(el) {
+		el.scroll({ movementX: -el.scrollX });
+	},
 };
