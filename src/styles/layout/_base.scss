@@ -6,6 +6,7 @@
 }
 
 * { // Hide all scrollbars
+	user-select: none;
 	scrollbar-width: none;
 	&::-webkit-scrollbar { display: none; }
 }
