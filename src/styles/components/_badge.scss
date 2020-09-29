@@ -1,0 +1,19 @@
+[data-badge] {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: $color-primary;
+		color: $color-light;
+		display: block;
+		content: attr(data-badge);
+		font-family: $base-font-family !important;
+		font-size: size('s');
+		padding: size('xxxs') size('xxs');
+		border-radius: 0;
+		font-weight: lighter;
+		transform: translate(70%, -70%);
+	}
+}

@@ -1,0 +1,22 @@
+.kids {
+	font-size: 1.5em !important;
+
+	.btn {
+		border-radius: 15px;
+		margin: 5px;
+		padding: 15px 25px;
+		font-size: inherit;
+	}
+}
+
+#kids-nav {
+	a {
+		display: flex;
+		align-items: center;
+		color: #000;
+		padding: 50px;
+		margin: 30px 0;
+		position: relative;
+		border: 1px solid color-shade($color-light, darker);
+	}
+}

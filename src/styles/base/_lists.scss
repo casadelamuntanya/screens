@@ -1,0 +1,17 @@
+.tips {
+	margin: size('s') size('s');
+
+	li {
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+		margin: size('s') 0;
+
+		h1, h2, h3, h4, h5, h6 { margin: 0 size('xs') 0 0; }
+
+		.icon {
+			font-size: size('m');
+			margin-right: size('s');
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.bar {
+	text-align: center;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	padding: size($bar-spacing) 0;
+	border-top: 1px solid color-shade($color-light, dark);
+	border-bottom: 1px solid color-shade($color-light, dark);
+
+	& + & { border-top: none; }
+
+	& > * { margin: 0 size($bar-spacing) / 2 !important; }
+
+	/* BAR ACCEPTS UNFOLDABLE PANEL  */
+	&--unfold {
+		flex-wrap: wrap;
+
+		.panel {
+			width: 100%;
+			margin: 0 !important;
+			margin: size($bar-spacing) 0 0 !important;
+			text-align: left;
+		}
+	}
+}

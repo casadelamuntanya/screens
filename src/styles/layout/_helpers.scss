@@ -1,0 +1,24 @@
+.align-right {
+	text-align: right;
+	justify-content: right;
+	margin-left: auto !important;
+}
+
+.align-left {
+	text-align: left;
+	justify-content: left;
+	margin-right: auto !important;
+}
+
+.align-center {
+	text-align: center;
+	justify-content: center;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.align-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

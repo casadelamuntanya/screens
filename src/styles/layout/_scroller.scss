@@ -1,0 +1,14 @@
+.scroller {
+	&__inner:empty {
+		display: flex;
+		color: color-shade($color-light, darker);
+		min-height: 100px;
+
+		&::before {
+			content: attr(data-empty);
+			display: block;
+			width: auto;
+			margin: auto;
+		}
+	}
+}

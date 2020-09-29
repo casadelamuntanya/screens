@@ -1,0 +1,46 @@
+@use 'sass:math';
+
+@mixin logo-size($size) {
+	height: math.round(2 * size($size));
+	margin: size($size);
+}
+
+.logo {
+	color: $color-dark;
+	vertical-align: middle;
+	outline: none;
+
+	&--reverse { color: $color-light; }
+
+	&--xs { @include logo-size('xs'); }
+	&--s { @include logo-size('s'); }
+	&--m { @include logo-size('m'); }
+	&--l { @include logo-size('l'); }
+	&--xl { @include logo-size('xl'); }
+	&--xxl { @include logo-size('xxl'); }
+	&--xxxl { @include logo-size('xxxl'); }
+}
+
+@mixin animate-line($interval, $duration, $delay) {
+	stroke-dasharray: 400%;
+	stroke-dashoffset: 400%;
+	animation: followline $duration * $interval linear $delay * $interval forwards 1;
+}
+
+.logo--animate {
+	.cdm-logo-name {
+		opacity: 0;
+		animation: fadein $logo-interval linear 11 * $logo-interval forwards 1;
+	}
+	.cdm-logo-box { @include animate-line($logo-interval, 5, 0); }
+	.cdm-logo-peaks-front-left-out { @include animate-line($logo-interval, 5, 5); }
+	.cdm-logo-peaks-front-left-in { @include animate-line($logo-interval, 5, 6); }
+	.cdm-logo-peaks-front-right-out { @include animate-line($logo-interval, 5, 6); }
+	.cdm-logo-peaks-front-right-in { @include animate-line($logo-interval, 5, 7); }
+	.cdm-logo-peaks-back-middle-left-out { @include animate-line($logo-interval, 5, 7); }
+	.cdm-logo-peaks-back-middle-left-in { @include animate-line($logo-interval, 5, 8); }
+	.cdm-logo-peaks-back-middle-right { @include animate-line($logo-interval, 5, 8); }
+	.cdm-logo-peaks-back-left-out { @include animate-line($logo-interval, 5, 9); }
+	.cdm-logo-peaks-back-left-in { @include animate-line($logo-interval, 5, 10); }
+	.cdm-logo-peaks-back-right { @include animate-line($logo-interval, 5, 10); }
+}

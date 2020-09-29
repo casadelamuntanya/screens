@@ -1,0 +1,33 @@
+/* BAR NAVIGATION */
+nav.bar a {
+	@extend h5;
+
+	color: color-shade($color-light, darkest);
+
+	&.router-link-exact-active,
+	&.active {
+		color: $color-dark;
+		transform: scale(1.1);
+	}
+}
+
+/* MAIN GRID NAVIGATION */
+.main-nav {
+	display: grid;
+	width: 100%;
+
+	&__box {
+		position: relative;
+		box-sizing: border-box;
+		padding: size($base-padding);
+		color: $color-dark !important;
+
+		&.blue { background: #e2ebed; }
+		&.brown { background: #ded8ce; }
+		&.gray { background: #dddddb; }
+		&.gray--light { background: #f6f6f6; }
+		&.gray--blueish { background: #e4e6e6; }
+		&.gray--brownish { background: #eae7e5; }
+		&.white { background: #fff; }
+	}
+}

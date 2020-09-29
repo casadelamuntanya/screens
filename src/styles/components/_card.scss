@@ -1,0 +1,52 @@
+.card {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+	height: size(9);
+	width: size(9);
+	border-radius: $base-border-radius;
+	overflow: hidden;
+	background: $color-dark;
+	box-sizing: border-box;
+	padding: size('m');
+	color: $color-light;
+	z-index: 0;
+	transition: all $base-interval ease-in-out;
+
+	.cover { opacity: 0.6; }
+
+	.insights {
+		display: flex;
+		justify-content: space-between;
+
+		.icon {
+			font-size: size('xs');
+			line-height: 1rem;
+			margin-left: 2px;
+		}
+		em { font-weight: bold; }
+		.unit { font-size: size('xs'); }
+	}
+
+	.thing {
+		background: #fff;
+		color: #000;
+		padding: 20px;
+		margin: 20px -19px -19px;
+		border-radius: 4px;
+	}
+
+	.badge {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: size('xs');
+		padding: size('s');
+		border-radius: $base-border-radius;
+		background: $color-dark;
+
+		&--alert { background: $color-alert; }
+	}
+}

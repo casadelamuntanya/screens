@@ -1,0 +1,22 @@
+.box {
+	background: $color-light;
+	color: $color-dark;
+	padding: size($box-padding);
+	box-sizing: border-box;
+	border-radius: $base-border-radius;
+	overflow: auto;
+	position: relative;
+
+	&--midtone1 { @include paint(color-shade($color-light, dark)); }
+	&--midtone2 { @include paint(color-shade($color-light, darker)); }
+	&--midtone3 { @include paint(color-shade($color-light, darkest)); }
+	&--midtone4 { @include paint(color-shade($color-dark, lightest)); }
+	&--midtone5 { @include paint(color-shade($color-dark, lighter)); }
+	&--midtone6 { @include paint(color-shade($color-dark, light)); }
+	&--dark { @include paint($color-dark); }
+	&--primary { @include paint($color-primary); }
+	&--alert { @include paint($color-alert); }
+
+	.fill > &,
+	.col > & { height: 100%; }
+}

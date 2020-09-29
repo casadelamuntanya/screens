@@ -1,0 +1,63 @@
+@import '~vue-range-component/dist/vue-range-slider';
+
+// Override vue-range-slider component
+$slider-bar-height: 2px;
+$slider-process-height: 3px;
+$slider-dot-size: 40px;
+$slider-margin: $slider-dot-size / 2;
+
+.slider {
+	background: transparent !important;
+	height: $slider-bar-height !important;
+	margin: $slider-dot-size / 2;
+
+	&-dot {
+		box-sizing: border-box;
+		border: $slider-process-height solid $color-primary;
+		top: 0 !important;
+		box-shadow: none !important;
+		height: $slider-dot-size !important;
+		width: $slider-dot-size !important;
+		margin-top: -$slider-dot-size / 2 + $slider-bar-height / 2;
+		margin-left: -$slider-dot-size / 2 + 8px;
+
+		&-dragging { box-shadow: 0 0 0 7px rgba($color-primary, 0.5) !important; }
+	}
+
+	&-process {
+		background: $color-primary !important;
+		height: $slider-process-height !important;
+	}
+
+	&-piecewise {
+		background: currentColor !important;
+		opacity: 0.1;
+	}
+
+	&-tooltip { display: none !important; }
+}
+
+// Custom range slider component
+.range-slider {
+	margin: size('m') 0;
+
+	&__title {
+		@extend h6;
+
+		margin: 0 auto 0 0;
+	}
+
+	&__output {
+		@extend .note;
+
+		display: flex;
+		align-items: center;
+		justify-content: right;
+		margin: size('xxs') size('s');
+
+		&-label {
+			font-size: size('s');
+			margin: 0 size('xxs');
+		}
+	}
+}

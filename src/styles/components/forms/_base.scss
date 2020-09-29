@@ -1,0 +1,20 @@
+/* CHECKBOX & RADIO SELECTORS */
+label {
+	color: color-shade($color-light, darkest);
+	display: inline-block;
+	margin: 0 1rem;
+	text-align: center;
+
+	/* stylelint-disable selector-list-comma-newline-after */
+	& > h1, & > h2, & > h3, & > h4, & > h5, & > h6 { margin: 0; }
+
+	input[type=checkbox],
+	input[type=radio] {
+		display: none;
+
+		&:checked + * {
+			color: $color-dark;
+			transform: scale(1.1);
+		}
+	}
+}

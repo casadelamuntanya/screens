@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+/* GRID */
+.stack {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	position: relative;
+
+	.fill {
+		flex: 1;
+		overflow: auto;
+		position: relative;
+	}
+}
+
+.cols {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	&--reverse { flex-direction: row-reverse; }
+
+	.col {
+		position: relative;
+		box-sizing: border-box;
+		max-height: 100%;
+		overflow: auto;
+
+		@for $i from 1 through 12 {
+			&--#{$i} { flex: 0 0 math.percentage($i / 12); }
+		}
+
+		&--auto { flex: 1; }
+	}
+}
