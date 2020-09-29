@@ -1,5 +1,6 @@
 export default {
 	inserted(el, binding) {
+		el.itemsCount = el.children[0].children.length;
 		el.scrollX = 0;
 
 		el.scroll = ({ movementX }) => {
@@ -30,7 +31,11 @@ export default {
 		}, true);
 	},
 
-	update(el) {
-		el.scroll({ movementX: -el.scrollX });
+	componentUpdated(el) {
+		const items = el.children[0].children.length;
+		if (el.itemsCount !== items) {
+			el.itemsCount = items;
+			el.scroll({ movementX: -el.scrollX });
+		}
 	},
 };
